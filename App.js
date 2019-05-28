@@ -12,9 +12,12 @@ import SignInScreen from './Screens/SignInScreen'
 import HomeScreen from './Screens/HomeScreen'
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 import SignUpScreen from './Screens/SignUpScreen';
+import {createStore} from 'redux'
+import allReducers from './reducers/index'
+import {Provider} from 'react-redux'
 
 
-const MainNavigator = createStackNavigator({
+const MainNavigator = createAppContainer(createStackNavigator({
   Home: {screen: HomeScreen},
   SignIn: {screen: SignInScreen},
   SignUp: {screen: SignUpScreen}
@@ -22,6 +25,18 @@ const MainNavigator = createStackNavigator({
 {
   initialRouteName: "SignIn",
   
-});
+}));
 
-export default App = createAppContainer(MainNavigator)
+const store = createStore(allReducers)
+
+export default class App extends Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <MainNavigator/>
+      </Provider>
+      
+
+    )
+  }
+}

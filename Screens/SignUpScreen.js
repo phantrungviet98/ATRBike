@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
-import { StyleSheet, TextInput, Text, View, TouchableOpacity, ImageBackground } from 'react-native';
+import { StyleSheet, TextInput, Text, View, TouchableOpacity, ImageBackground, Picker } from 'react-native';
 import PickerModal from 'react-native-picker-modal-view';
+import {setCurrentUser} from '../actions/index';
+import {connect} from 'react-redux'
 
-const countryCodeList = [
-    { Id: 1, Name: '+84', Value: '84' },
-    { Id: 1, Name: '+33', Value: '33' },
-    { Id: 1, Name: '+35', Value: '35' }
-]
 
-export default class SignUpScreen extends Component {
+class SignUpScreen extends Component {
 
     constructor(props) {
         super(props)
@@ -16,7 +13,7 @@ export default class SignUpScreen extends Component {
             username: "",
             email: "",
             phoneNumber: "",
-            countryCode: "",
+            countryCode: 84,
             password: "",
         }
     }
@@ -42,9 +39,12 @@ export default class SignUpScreen extends Component {
             .then((responseJson) => {
                 console.log(responseJson)
                 if('token' in responseJson){
-                    this.props.navigation.navigate('SignIn', responseJson.user)
+                    this.props.setCurrentUser(responseJson)
+                    alert('Chúc mừng bạn đã đăng kí thành công.')
+                    this.props.navigation.navigate('SignIn')
                 } else {
-                    alert(responseJson.message)
+                    console.log(responseJson.message)
+                    alert(responseJson.message.constraints)
                 }
             })
             .catch((error) => {
@@ -68,14 +68,11 @@ export default class SignUpScreen extends Component {
                         style={styles.textInput}
                         placeholder='Email'
                         keyboardType='email-address' />
-                    <PickerModal
-                        onSelected={(selected) => this.setState({
-                            countryCode: selected.Value
-                        })}
-                        items={countryCodeList}
-                        selected={this.state.selectedCountryCode}
-                        selectPlaceholderText='Choose your Country code'
-                    />
+                    <Picker style = {{width: 200}}>
+                        <Picker.Item label='+84' value='84'/>
+                        <Picker.Item label='+33' value='33'/>
+                        <Picker.Item label='+55' value='55'/>
+                    </Picker>
                     <TextInput
                         onChangeText={(text) => this.setState({ phoneNumber: text })}
                         style={styles.textInput}
@@ -101,6 +98,10 @@ export default class SignUpScreen extends Component {
         )
     }
 }
+
+export default connect(null, {setCurrentUser})(SignUpScreen)
+
+
 
 const styles = StyleSheet.create({
     textInput: {

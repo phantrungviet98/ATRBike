@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri May 24 19:18:05 ICT 2019
+#Mon May 27 08:41:59 ICT 2019
 5.base=/home/ptv/Documents/ATRBike/android/app/build/intermediates/transforms/mergeJniLibs/debug/0
 42.base=/home/ptv/Documents/ATRBike/android/app/build/intermediates/transforms/mergeJniLibs/debug/0
 22.path=lib/armeabi-v7a/libglog_init.so

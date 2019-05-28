@@ -1,34 +1,36 @@
 import React, { Component } from 'react';
-import {StyleSheet, TextInput, Text, View, TouchableOpacity, ImageBackground } from 'react-native';
-import PickerModal from 'react-native-picker-modal-view';
+import {StyleSheet, TextInput, Text, View, TouchableOpacity, ImageBackground, Picker } from 'react-native';
+import { connect } from 'react-redux'
+import { setCurrentUser, setCurrentToken } from '../actions';
 
 const countryCodeList = [
     { Id: 1, Name: '+84', Value: '84' },
-    { Id: 1, Name: '+33', Value: '33' },
-    { Id: 1, Name: '+35', Value: '35' }
+    { Id: 2, Name: '+33', Value: '33' },
+    { Id: 3, Name: '+35', Value: '35' }
 ]
 
-export default class SignInScreen extends Component {
+class SignInScreen extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            selectedCountryCode: {},
+            countryCode: 84,
             phoneNumber: null,
-            password: null,
-            registeredUsername: ''
+            password: ''
         }
     }
 
+    componentWillMount() {
+        console.log("component will mount: "+JSON.stringify(this.state))
+    }
+
     componentDidMount() {
-        const registeredUsername = this.props.navigation.getParam('username', '')
-        this.setState({registeredUsername: registeredUsername})
-        
+        console.log("component did mount: "+JSON.stringify(this.state))
     }
 
     selected = (selected) => {
         this.setState({
-            selectedCountryCode: selected
+            countryCode: selected.Value
         })
     }
 
@@ -43,16 +45,19 @@ export default class SignInScreen extends Component {
             },
             body: JSON.stringify({
                 "phoneNumber": parseInt(this.state.phoneNumber),
-                "countryCode":  parseInt(this.state.selectedCountryCode.Value),
+                "countryCode":  parseInt(this.state.countryCode),
                 "password": this.state.password
             }),
         })
             .then((response) => response.json())
             .then((responseJson) => {
                 if('token' in responseJson){
+                    alert(JSON.stringify(responseJson))
+                    this.props.setCurrentUser(responseJson)
                     this.props.navigation.navigate('Home')
                 } else {
-                    alert('Lỗi')
+                    alert(JSON.stringify(responseJson))
+                    alert(JSON.stringify(this.state.countryCode))
                 }
             })
             .catch((error) => {
@@ -60,7 +65,18 @@ export default class SignInScreen extends Component {
             });
     }
 
+    
+    componentWillReceiveProps(nextProps) {
+        const {user} = nextProps.data
+        this.setState({
+            countryCode: user.countryCode,
+            phoneNumber: user.phoneNumber,
+        })
+    }
+
+
     render() {
+        const {user} = this.props.data
         return (
             <ImageBackground 
                 source={{uri: 'https://ant-tech.eu/wp-content/uploads/2017/06/logo-text.png'}} 
@@ -74,21 +90,21 @@ export default class SignInScreen extends Component {
                     </TouchableOpacity>
                 </View>
                 <View style={{ flex: 1, justifyContent: 'flex-end', alignItems: 'center', margin: 10 }}>
-                    <PickerModal
-                        onSelected={(selected) => this.selected(selected)}
-                        items={countryCodeList}
-                        selected={this.state.selectedCountryCode}
-                        selectPlaceholderText='Choose your Country code'
-                    />
+                    <Picker style = {{width: 200}} selectedValue = {user.countryCode} onValueChange = {(selected) => this.setState({countryCode: selected})}>
+                        <Picker.Item label='+84' value='84'/>
+                        <Picker.Item label='+33' value='33'/>
+                        <Picker.Item label='+55' value='55'/>
+                    </Picker>
                     <TextInput
-                        onChangeText={(text) => this.setState({phoneNumber: text})}
+                        onChangeText = {(text) => this.setState({phoneNumber: text})}
                         style={styles.textInput}
                         placeholder='Enter your phone number'
                         textContentType='telephoneNumber'
                         keyboardType='numeric'
+                        defaultValue = {user.phoneNumber ? user.phoneNumber.toString(10) : ''}
                         maxLength={9} />
                     <TextInput
-                        onChangeText={(text) => this.setState({password: text})}
+                        onChangeText = {(text) => this.setState({password: text})}
                         style={styles.textInput}
                         placeholder='Enter your password'
                         textContentType='password'
@@ -105,6 +121,14 @@ export default class SignInScreen extends Component {
         )
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        data: state.setCurrentUser
+    }
+}
+
+export default connect(mapStateToProps, {setCurrentUser})(SignInScreen)
 
 const styles = StyleSheet.create({
     textInput: {
