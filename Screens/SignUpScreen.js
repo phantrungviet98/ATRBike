@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { StyleSheet, TextInput, Text, View, TouchableOpacity, ImageBackground, Picker } from 'react-native';
-import PickerModal from 'react-native-picker-modal-view';
 import {setCurrentUser} from '../actions/index';
 import {connect} from 'react-redux'
+import Header from '../components/Header'
 
 
 class SignUpScreen extends Component {
@@ -16,6 +16,10 @@ class SignUpScreen extends Component {
             countryCode: 84,
             password: "",
         }
+    }
+    
+    static navigationOptions = {
+        header: null
     }
 
     requestSignUp = () => {
@@ -57,6 +61,7 @@ class SignUpScreen extends Component {
             <ImageBackground
                 source={{ uri: 'https://ant-tech.eu/wp-content/uploads/2017/06/logo-text.png' }}
                 style={{ width: '100%', height: '100%' }}>
+                <Header title='Sign Up' goBack={this.props.navigation.goBack}/>
                 <View style={{ flex: 1, justifyContent: 'flex-end', alignItems: 'center', margin: 10 }}>
                     <TextInput
                         onChangeText={(text) => this.setState({ username: text })}

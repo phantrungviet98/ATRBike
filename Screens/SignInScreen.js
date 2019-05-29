@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {StyleSheet, TextInput, Text, View, TouchableOpacity, ImageBackground, Picker } from 'react-native';
 import { connect } from 'react-redux'
-import { setCurrentUser, setCurrentToken } from '../actions';
+import { setCurrentUser} from '../actions';
+import Header from '../components/Header'
 
 const countryCodeList = [
     { Id: 1, Name: '+84', Value: '84' },
@@ -18,6 +19,10 @@ class SignInScreen extends Component {
             phoneNumber: null,
             password: ''
         }
+    }
+
+    static navigationOptions = {
+        header: null
     }
 
     componentWillMount() {
@@ -81,6 +86,7 @@ class SignInScreen extends Component {
             <ImageBackground 
                 source={{uri: 'https://ant-tech.eu/wp-content/uploads/2017/06/logo-text.png'}} 
                 style={{width: '100%', height: '100%'}}>
+                <Header title='Sign In'/>
                 <View style={{flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center', margin: 10 }}>
                     <TouchableOpacity
                         onPress={()=>this.props.navigation.navigate('SignUp')}>

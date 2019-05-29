@@ -15,16 +15,21 @@ import SignUpScreen from './Screens/SignUpScreen';
 import {createStore} from 'redux'
 import allReducers from './reducers/index'
 import {Provider} from 'react-redux'
+import LockScreen from './Screens/LockScreen';
+import Header from './components/Header'
 
 
 const MainNavigator = createAppContainer(createStackNavigator({
   Home: {screen: HomeScreen},
   SignIn: {screen: SignInScreen},
-  SignUp: {screen: SignUpScreen}
+  SignUp: {screen: SignUpScreen},
+  Lock: {screen: LockScreen}
 },
 {
   initialRouteName: "SignIn",
-  
+  navigationOptions: {
+    header: null
+  }
 }));
 
 const store = createStore(allReducers)

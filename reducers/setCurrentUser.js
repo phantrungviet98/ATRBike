@@ -2,7 +2,7 @@ import {SETCURRENTUSER} from '../actions/actionTypes'
 
 const initial = {
     user: {},
-    token: ''
+    token: '',
 };
 
 const setCurrentUser = (state = initial, action) => {
