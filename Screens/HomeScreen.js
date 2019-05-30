@@ -30,12 +30,12 @@ class HomeScreen extends Component {
     }
  
     componentDidMount = () => {
-        console.log(this.props.data.token)
+        console.log(this.props.data)
         fetch('http://api.appebike.com:4000/v1/shared/stations?populate=locks', {
             method: 'GET',
             headers: {
                 Accept: 'application/json',
-                'Authorization': 'Bearer ' + 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBOYW1lIjoiYXRyYmlrZSIsInNlc3Npb25JZCI6IjVjZWRlNzNlMzYzM2RjNWI0YmYwYmRhOSIsImlhdCI6MTU1OTA5NTEwMiwiZXhwIjoxNTU5MTgxNTAyfQ.W-EOlmAieTzuCAjYb2sEvPzFbaWHRbfMDoULar4qSq8',
+                'Authorization': 'Bearer ' + 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBOYW1lIjoiYXRyYmlrZSIsInNlc3Npb25JZCI6IjVjZWYzZjMyZDk1ZDk1NTFiY2RiNGMxOCIsImlhdCI6MTU1OTE4MzE1NCwiZXhwIjoxNTU5MjY5NTU0fQ.6a_2rgn7F9BygmMAU7GR7ArYhlRGUyKeTBue8h9yo1o',
                 // 'Authorization': 'Bearer ' + this.props.data.token,
                 'Content-Type': 'application/json',
                 'app-id': 'c0c45117-7a5b-4169-b1fc-06178cdef31a',

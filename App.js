@@ -17,16 +17,18 @@ import allReducers from './reducers/index'
 import {Provider} from 'react-redux'
 import LockScreen from './Screens/LockScreen';
 import Header from './components/Header'
+import RentingScreen from './Screens/RentingScreen'
 
 
 const MainNavigator = createAppContainer(createStackNavigator({
   Home: {screen: HomeScreen},
   SignIn: {screen: SignInScreen},
   SignUp: {screen: SignUpScreen},
-  Lock: {screen: LockScreen}
+  Lock: {screen: LockScreen},
+  Renting: {screen: RentingScreen}
 },
 {
-  initialRouteName: "SignIn",
+  initialRouteName: "Home",
   navigationOptions: {
     header: null
   }

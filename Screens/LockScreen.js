@@ -24,36 +24,14 @@ class LockScreen extends Component {
     // }
 
     componentDidMount = () => {
-        console.log(this.props.data.token)
-        fetch('http://api.appebike.com:4000/v1/shared/stations?populate=locks', {
-            method: 'GET',
-            headers: {
-                Accept: 'application/json',
-                'Authorization': 'Bearer ' + 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBOYW1lIjoiYXRyYmlrZSIsInNlc3Npb25JZCI6IjVjZWRlNzNlMzYzM2RjNWI0YmYwYmRhOSIsImlhdCI6MTU1OTA5NTEwMiwiZXhwIjoxNTU5MTgxNTAyfQ.W-EOlmAieTzuCAjYb2sEvPzFbaWHRbfMDoULar4qSq8',
-                // 'Authorization': 'Bearer ' + this.props.data.token,
-                'Content-Type': 'application/json',
-                'app-id': 'c0c45117-7a5b-4169-b1fc-06178cdef31a',
-                'secret-key': 'adb56c27-ea8d-49a8-a94d-68a1d4cb4d80'
-            },
+        this.setState({
+            listLock: this.props.navigation.getParam('stationLocks', [])
         })
-            .then((response) => response.json())
-            .then((responseJson) => {
-                if ('results' in responseJson) {
-                    this.props.setStations(responseJson.results)
-                } else {
-                    alert('Response: ' + JSON.stringify(responseJson))
-                }
-            })
-            .catch((error) => {
-                console.error(error);
-            });
     };
 
-    componentWillReceiveProps(nextProps) {
-        locks = nextProps.navigation.getParam('stationLocks', [-1])
-        this.setState({
-            listLock: locks
-        })
+    onPressLock = (lock) => {
+        console.log(lock)
+        this.props.navigation.navigate('Renting', {chosenLock: lock})
     }
 
     render() {
@@ -64,7 +42,7 @@ class LockScreen extends Component {
                 <View>
                     {this.state.listLock.length !== 0 ?
                         <FlatList data={this.state.listLock}
-                            renderItem={({ item }) => <ItemLockFlatList item={item} />}
+                            renderItem={({ item }) => <ItemLockFlatList item={item} goToRentingScreen = {this.onPressLock}/>}
                             keyExtractor={(item, index) => index.toString()}
                         /> :
                         <Text>No any lock</Text>

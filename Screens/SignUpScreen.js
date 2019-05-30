@@ -104,7 +104,13 @@ class SignUpScreen extends Component {
     }
 }
 
-export default connect(null, {setCurrentUser})(SignUpScreen)
+const mapDispatchToProps = (dispatch) => {
+    return {
+        setCurrentUser: (user) => dispatch(setCurrentUser)
+    }
+}
+
+export default connect(null, {mapDispatchToProps})(SignUpScreen)
 
 
 

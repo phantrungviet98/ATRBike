@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, TouchableOpacity } from 'react-native'
+import {StyleSheet, View, Text, TouchableOpacity } from 'react-native'
 import Swipeout from 'react-native-swipeout'
 import {setCurrentUser} from '../actions'
 import {connect} from 'react-redux'
@@ -67,10 +67,9 @@ class ItemFlatList extends Component {
                     console.log(this.props.item.locks)
                     this.props.goToLockScreen(this.props.item.locks)
                 }}>
-                    <View style={{ backgroundColor: 'lightpink', }}>
+                    <View style={ styles.itemStyle }>
                         <Text>{this.props.item.name}</Text>
                         <Text>{this.props.item.address}</Text>
-                        <View style={{ height: 1, backgroundColor: 'blue', }}></View>
                     </View>
                 </TouchableOpacity>
             </Swipeout>
@@ -83,5 +82,16 @@ const mapStateToProps = (state) => {
         data : state.setCurrentUser
     }
 } 
+
+const styles = StyleSheet.create({
+    itemStyle: {
+        paddingLeft: 10,
+        justifyContent: 'center',
+        backgroundColor: 'lightpink',
+        borderBottomColor: 'blue',
+        borderBottomWidth: 1,
+        height: 60
+    }
+})
 
 export default connect(mapStateToProps)(ItemFlatList)

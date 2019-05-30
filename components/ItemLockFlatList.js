@@ -14,7 +14,7 @@ class ItemLockFlatList extends Component {
     render() {
         return (
             <Swipeout>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => this.props.goToRentingScreen(this.props.item)}>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'lightpink', padding: 10,}}>
                         <View>
                             <Text>Name: {this.props.item.name}</Text>
