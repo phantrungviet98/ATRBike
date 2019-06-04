@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/ptv/Documents/ATRBike/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-land/values-land.xml",
+            "outputFile": "/home/ptv/Documents/ReactNative/AppIgnite/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-land/values-land.xml",
             "map": [
                 {
                     "source": "/home/ptv/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/584a88dbfbca4d73e6cc8fdb8ce1f338/res/values-land/values-land.xml",
