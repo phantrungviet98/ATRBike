@@ -3,13 +3,8 @@ import { StyleSheet, TextInput, Text, View, TouchableOpacity, ImageBackground, P
 import { connect } from 'react-redux'
 import Header from '../Components/Header'
 import SignInRedux from '../Redux/SignInRedux'
+import Spiner from 'react-native-loading-spinner-overlay'
 
-
-const countryCodeList = [
-  { Id: 1, Name: '+84', Value: '84' },
-  { Id: 2, Name: '+33', Value: '33' },
-  { Id: 3, Name: '+35', Value: '35' }
-]
 
 class SignInScreen extends Component {
 
@@ -17,8 +12,10 @@ class SignInScreen extends Component {
     super(props);
     this.state = {
       countryCode: 84,
-      phoneNumber: null,
-      password: ''
+      phoneNumber: -1,
+      password: '',
+      spiner: false,
+      buttonPressed: false
     }
   }
 
@@ -26,11 +23,6 @@ class SignInScreen extends Component {
     header: null
   }
 
-  selected = (selected) => {
-    this.setState({
-      countryCode: selected.Value
-    })
-  }
 
   // requestSignIn = () => {
   //     fetch('http://api.appebike.com:4000/v1/shared/auth/sign-in', {
@@ -65,41 +57,64 @@ class SignInScreen extends Component {
 
 
   componentWillReceiveProps(nextProps) {
-    // const {user} = nextProps.data
-    // this.setState({
-    //     countryCode: user.countryCode,
-    //     phoneNumber: user.phoneNumber,
-    // })
+    console.log('nextProps', nextProps)
+    const { navigation } = this.props
+    if (this.state.buttonPressed == true) {
+      if (nextProps.isRequesting === true) {
+        this.setState({ spiner: true })
+      }
+      else {
+        this.setState({ spiner: false })
+        if (nextProps.error !== null) {
+          alert(nextProps.error.message)
+        }
+        else {
+          navigation.navigate('StationScreen', { token: nextProps.token, user: nextProps.user })
+        }
+      }
+    }
   }
 
+  //get User from SignUpScreen
+  getRegisteredUser = (registeredUser) => {
+    this.setState({
+      phoneNumber: registeredUser.phoneNumber,
+      countryCode: registeredUser.countryCode
+    })
+  }
 
   render() {
+    console.log(this.state)
     return (
       <ImageBackground
         source={{ uri: 'https://ant-tech.eu/wp-content/uploads/2017/06/logo-text.png' }}
         style={{ width: '100%', height: '100%' }}>
         <Header title='Sign In' />
+        <Spiner visible={this.state.spiner} textContent={'Loading...'}/>
         <View style={{ flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center', margin: 10 }}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('SignUpScreen', { setRegisteredUser: this.getRegisteredUser })}>
             <View style={{ justifyContent: 'center', alignItems: 'center', width: 100, height: 30, backgroundColor: 'lightblue' }}>
               <Text>Sign Up</Text>
             </View>
           </TouchableOpacity>
         </View>
         <View style={{ flex: 1, justifyContent: 'flex-end', alignItems: 'center', margin: 10 }}>
-          <Picker style={{ width: 200 }} onValueChange={(selected) => this.setState({ countryCode: selected })}>
+          <Picker style={styles.textInput} selectedValue={this.state.countryCode} onValueChange={(itemValue, itemIndex) => {
+            this.setState({ countryCode: parseInt(itemValue) })
+          }}>
             <Picker.Item label='+84' value='84' />
             <Picker.Item label='+33' value='33' />
             <Picker.Item label='+55' value='55' />
           </Picker>
           <TextInput
-            onChangeText={(text) => this.setState({ phoneNumber: text })}
+            onChangeText={(text) => this.setState({ phoneNumber: parseInt(text) })}
             style={styles.textInput}
             placeholder='Enter your phone number'
             textContentType='telephoneNumber'
             keyboardType='numeric'
             // defaultValue = {user.phoneNumber ? user.phoneNumber.toString(10) : ''}
-            maxLength={9} />
+            maxLength={9}
+            defaultValue={this.state.phoneNumber == -1 ? '' : this.state.phoneNumber.toString()} />
           <TextInput
             onChangeText={(text) => this.setState({ password: text })}
             style={styles.textInput}
@@ -110,11 +125,13 @@ class SignInScreen extends Component {
             onPress={
               () => {
                 this.props.signIn({
-                  countryCode: 84, 
+                  countryCode: 84,
                   phoneNumber: 918718610,
                   password: '123456'
                 })
-                console.log(this.props.a)
+                //buttonPressed to determine if navigating to StationScreen
+                this.setState({ buttonPressed: true })
+                console.log('after',this.state)
               }}
             style={{ marginTop: 10 }}>
             <View style={{ justifyContent: 'center', alignItems: 'center', width: 150, height: 30, backgroundColor: 'orange' }}>
@@ -136,9 +153,11 @@ class SignInScreen extends Component {
 // export default connect(mapStateToProps, {setCurrentUser})(SignInScreen)
 
 const mapStateToProps = (state) => {
-  console.log(state)
   return {
-    a: state
+    token: state.signIn.token,
+    user: state.signIn.user,
+    isRequesting: state.signIn.isRequesting,
+    error: state.signIn.error
   }
 }
 

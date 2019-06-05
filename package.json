@@ -38,6 +38,7 @@
     "react-native-device-info": "^1.6.1",
     "react-native-gesture-handler": "1.0.9",
     "react-native-i18n": "2.0.14",
+    "react-native-loading-spinner-overlay": "^1.0.1",
     "react-navigation": "3.0.0",
     "react-navigation-redux-helpers": "^2.0.6",
     "react-redux": "^6.0.0",

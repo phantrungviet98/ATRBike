@@ -11,7 +11,9 @@ export const reducers = combineReducers({
   nav: require('./NavigationRedux').reducer,
   github: require('./GithubRedux').reducer,
   search: require('./SearchRedux').reducer,
-  signIn: require('./SignInRedux').reducer
+  signIn: require('./SignInRedux').reducer,
+  signUp: require('./SignUpRedux').reducer,
+  gettingStation: require('./GettingStationRedux').reducer
 })
 
 

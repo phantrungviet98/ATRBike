@@ -2,10 +2,6 @@ import { ofType } from 'redux-observable'
 import { map, mergeMap, catchError } from 'rxjs/operators'
 import { ajax } from 'rxjs/ajax'
 import { of } from 'rxjs'
-import SignInAction from '../Redux/SignInRedux'
-
-
-// import {fetchDataFulfilled} from '../actions'
 import SignInRedux, { SignInTypes } from '../Redux/SignInRedux'
 
 export const signInEpic = action$ => action$.pipe(
@@ -34,14 +30,15 @@ export const signInEpic = action$ => action$.pipe(
       }
     }).pipe(
       map(response => {
-        return SignInAction.signInSuccess({
+        return SignInRedux.signInSuccess({
           token: response.response.token, 
           user: response.response.user
         })
       }),
       catchError(error => {
+        console.log('error',error)
         return of(
-          SignInAction.signInFailure(error.response)
+          SignInRedux.signInFailure(error.response)
         )
       })
     )

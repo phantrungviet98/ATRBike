@@ -1,4 +1,4 @@
-#Tue Jun 04 08:55:00 ICT 2019
-base.0=/home/ptv/Documents/ReactNative/AppIgnite/android/app/build/intermediates/transforms/dexMerger/debug/0
+#Wed Jun 05 09:00:04 ICT 2019
+base.0=/home/ptv/Documents/ATRBike/android/app/build/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex

@@ -1,7 +1,6 @@
 import { createReducer, createActions } from 'reduxsauce'
 import Immutable from 'seamless-immutable'
-import { filter } from 'ramda'
-import { startsWith } from 'ramdasauce'
+
 /* ------------- Types and Action Creators ------------- */
 
 const { Types, Creators } = createActions({
@@ -27,18 +26,18 @@ export const INITIAL_STATE = Immutable({
 /* ------------- Reducers ------------- */
 
 export const signInRequest = (state, action) => {
-  console.log(INITIAL_STATE)
+  console.log('signInRequest', INITIAL_STATE)
   return state.merge({isRequesting: true})
 }
 
 export const signInSuccess = (state, action) => {
-  console.log(action)
-  return state.merge({isRequesting: false, token: action.response.token, user: action.response.user})
+  console.log('signSuccess', action)
+  return state.merge({isRequesting: false, token: action.response.token, user: action.response.user, error: null})
 }
 
 export const signInFailure = (state, action) => {
-  console.log(action)
-  return state.merge({isRequesting: false, error: action.error})
+  console.log('signFailure', action)
+  return state.merge({isRequesting: false, error: action.error, token: null, user: {}})
 }
 
 export const signOut = (state, action) => INITIAL_STATE
