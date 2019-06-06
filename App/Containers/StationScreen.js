@@ -45,10 +45,10 @@ class StationScreen extends Component {
     
   }
 
-  // onPressStation = (locks) => {
-  //     console.log(locks)
-  //     this.props.navigation.navigate('Lock', {stationLocks: locks})
-  // }
+  onPressStation = (stationId, locks) => {
+      console.log('lock ', locks)
+      this.props.navigation.navigate('LockScreen', {stationId: stationId, stationLocks: locks})
+  }
 
   // componentDidMount = () => {
   //     console.log(this.props.data)

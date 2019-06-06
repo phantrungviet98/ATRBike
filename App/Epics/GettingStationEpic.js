@@ -21,7 +21,6 @@ export const gettingStationEpic = action$ => action$.pipe(
       }
     }).pipe(
       map(response => {
-        console.log(response.response)
         return GettingStationRedux.gettingStationSuccess({
           listStation: response.response.results
         })
@@ -29,7 +28,7 @@ export const gettingStationEpic = action$ => action$.pipe(
       catchError(error => {
         console.log(response)
         return of(
-          SignInAction.gettingStationFailure(error.response)
+          GettingStationRedux.gettingStationFailure(error.response)
         )
       })
     )

@@ -3,7 +3,7 @@ import { StyleSheet, TextInput, Text, View, TouchableOpacity, ImageBackground, P
 import { connect } from 'react-redux'
 import Header from '../Components/Header'
 import SignInRedux from '../Redux/SignInRedux'
-import Spiner from 'react-native-loading-spinner-overlay'
+import Loading from 'react-native-loading-spinner-overlay'
 
 
 class SignInScreen extends Component {
@@ -14,7 +14,7 @@ class SignInScreen extends Component {
       countryCode: 84,
       phoneNumber: -1,
       password: '',
-      spiner: false,
+      isLoading: false,
       buttonPressed: false
     }
   }
@@ -61,10 +61,10 @@ class SignInScreen extends Component {
     const { navigation } = this.props
     if (this.state.buttonPressed == true) {
       if (nextProps.isRequesting === true) {
-        this.setState({ spiner: true })
+        this.setState({ isLoading: true })
       }
       else {
-        this.setState({ spiner: false })
+        this.setState({ isLoading: false })
         if (nextProps.error !== null) {
           alert(nextProps.error.message)
         }
@@ -90,7 +90,7 @@ class SignInScreen extends Component {
         source={{ uri: 'https://ant-tech.eu/wp-content/uploads/2017/06/logo-text.png' }}
         style={{ width: '100%', height: '100%' }}>
         <Header title='Sign In' />
-        <Spiner visible={this.state.spiner} textContent={'Loading...'}/>
+        <Loading visible={this.state.isLoading} textContent={'Loading...'}/>
         <View style={{ flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center', margin: 10 }}>
           <TouchableOpacity onPress={() => this.props.navigation.navigate('SignUpScreen', { setRegisteredUser: this.getRegisteredUser })}>
             <View style={{ justifyContent: 'center', alignItems: 'center', width: 100, height: 30, backgroundColor: 'lightblue' }}>

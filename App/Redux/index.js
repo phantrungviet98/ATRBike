@@ -13,7 +13,8 @@ export const reducers = combineReducers({
   search: require('./SearchRedux').reducer,
   signIn: require('./SignInRedux').reducer,
   signUp: require('./SignUpRedux').reducer,
-  gettingStation: require('./GettingStationRedux').reducer
+  gettingStation: require('./GettingStationRedux').reducer,
+  rentingBike: require('./RentingBikeRedux').reducer
 })
 
 
