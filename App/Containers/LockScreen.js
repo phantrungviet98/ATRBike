@@ -1,98 +1,96 @@
+import AppConfig from '../Config/AppConfig'
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, FlatList, Image } from 'react-native';
 import { connect } from 'react-redux'
 import ItemLockFlatList from '../Components/ItemLockFlatList'
 import Header from '../Components/Header'
 import GettingStationRedux from '../Redux/GettingStationRedux'
+import SocketIOClient from 'socket.io-client'
 
 class LockScreen extends Component {
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            listLock: [],
-        }
+  constructor(props) {
+    super(props)
+    this.state = {
+      listLock: [],
     }
+  }
 
-    static navigationOptions = {
-        header: null
-    }
+  static navigationOptions = {
+    header: null
+  }
 
-    // setPopupVisible = (isVisible) => {
-    //     console.log(isVisible)
-    //     this.setState({popupVisible: Boolean(isVisible)})
-    // }
+  // setPopupVisible = (isVisible) => {
+  //     console.log(isVisible)
+  //     this.setState({popupVisible: Boolean(isVisible)})
+  // }
 
-    getStationLock = () => {
+  getStationLock = () => {
 
-    }
-    
-    componentDidMount = () => {
-        this.setState({
-            listLock: this.props.navigation.getParam('stationLocks', [])
-        })
+  }
 
-        const didFocusSubscription = this.props.navigation.addListener(
-            'didFocus',
-            payload => {
-              console.log('didFocus', payload);
-            }
-          );
-          
-          // Remove the listener when you are done
-        didFocusSubscription.remove();
+  componentDidMount = () => {
+    this.setState({
+      listLock: this.props.navigation.getParam('stationLocks', [])
+    })
 
-        console.log('componendidmount lockscreen')
-    };
+    const didFocusSubscription = this.props.navigation.addListener(
+      'didFocus',
+      payload => {
+        console.log('didFocus', payload);
+      }
+    );
 
-    componentWillMount = () => {
-        console.log('componenwillmount lockscreen')
-    }
+    // Remove the listener when you are done
+    didFocusSubscription.remove();
 
-    componentWillUpdate = () => {
-        console.log('componenwillupdate lockscreen')
-    }
+    console.log('componendidmount lockscreen')
+  };
 
-    componentWillReceiveProps(nextPro){
-        console.log('weillreci')
-    }
+  componentWillMount = () => {
+    console.log('componenwillmount lockscreen')
+  }
 
-    onPressLock = (lock) => {
-        console.log(lock)
-        this.props.navigation.navigate('RentingScreen', {chosenLock: lock, updateLockScreen: this.reRender})
-    }
+  componentWillUpdate = () => {
+    console.log('componenwillupdate lockscreen')
 
-    reRender = () => {
-        alert('da update')
-        this.forceUpdate()
-    }
+  }
 
-    render() {
-        const stationId = this.props.navigation.getParam('stationId', '-1')
-        return (
-            <View style={{ flex: 1 }}>
-                <Header title='Lock' goBack = {() => this.props.navigation.goBack()}/>
+  onPressLock = (lock) => {
+    console.log(lock)
+    this.props.navigation.navigate('RentingScreen', { chosenLock: lock, updateLockScreen: this.reRender })
+  }
 
-                <View>
-                    <Text> {stationId} </Text>
-                </View>
+  reRender = () => {
+    this.forceUpdate()
+  }
 
-                <View>
-                    {this.state.listLock.length !== 0 ?
-                        <FlatList data={this.state.listLock}
-                            renderItem={({ item }) => <ItemLockFlatList item={item} goToRentingScreen = {this.onPressLock}/>}
-                            keyExtractor={(item, index) => index.toString()}
-                        /> :
-                        <Text>No any lock</Text>
-                    }
-                </View>
-            </View>
-        )
-    }
+  render() {
+    const stationId = this.props.navigation.getParam('stationId', '-1')
+    return (
+      <View style={{ flex: 1 }}>
+        <Header title='Lock' goBack={() => this.props.navigation.goBack()} />
+
+        <View>
+          <Text> {stationId} </Text>
+        </View>
+
+        <View>
+          {this.state.listLock.length !== 0 ?
+            <FlatList data={this.state.listLock}
+              renderItem={({ item }) => <ItemLockFlatList item={item} goToRentingScreen={this.onPressLock} />}
+              keyExtractor={(item, index) => index.toString()}
+            /> :
+            <Text>No any lock</Text>
+          }
+        </View>
+      </View>
+    )
+  }
 }
 
 // const mapStateToProps = (state) => {
-    
+
 // }
 
 // const mapDispatchToProps = (dispatch) => {

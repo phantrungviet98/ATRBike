@@ -1,5 +1,5 @@
 {
-  "name": "AppIgnite",
+  "name": "ATRBike",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -48,7 +48,8 @@
     "redux-saga": "^1.0.0",
     "reduxsauce": "1.0.1",
     "rxjs": "^6.5.2",
-    "seamless-immutable": "^7.1.4"
+    "seamless-immutable": "^7.1.4",
+    "socket.io-client": "^2.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
