@@ -13,34 +13,35 @@ import styles from './Styles/RootContainerStyles'
 
 class RootContainer extends Component {
 
-  componentDidMount() {
-    // if redux persist is not active fire startup action
-    if (!ReduxPersist.active) {
-      this.props.startup()
-    }
+  // componentDidMount() {
+  //   // if redux persist is not active fire startup action
+  //   if (!ReduxPersist.active) {
+  //     this.props.startup()
+  //   }
 
-    //Socket IO
-    const room = 'myRoom'
-    socket = SocketIOClient(AppConfig.HOST + ':' + AppConfig.PORT, {
-      query: `room=${room}`
-    })
+  //   //Socket IO
+  //   const room = 'myRoom'
+  //   socket = SocketIOClient(AppConfig.HOST + ':' + AppConfig.PORT, {
+  //     query: `room=${room}`
+  //   })
 
-    socket.on('connect', () => {
-      console.log('Conneeted SC')
-    })
+  //   socket.on('connect', () => {
+  //     console.log('Conneeted SC')
+  //   })
 
-    socket.on('events', data => {
-      console.log('event', data)
-      console.log('prpossdfsdafsdf', this.props)
-      if (data.operationType == 'update') {
-        this.props.updateLock(data.data)
-      }
-    })
+  //   socket.on('events', data => {
+  //     console.log('event', data)
+  //     console.log('prpossdfsdafsdf', this.props)
+  //     if (data.operationType == 'update') {
+  //       console.log('datatatatatatatAAA: ' +JSON.stringify(data.data))
+  //       this.props.updateLock(data.data)
+  //     }
+  //   })
 
-    socket.on('disconnect', () => {
-      console.log('Disconneted')
-    })
-  }
+  //   socket.on('disconnect', () => {
+  //     console.log('Disconneted')
+  //   })
+  // }
 
   render() {
     return (

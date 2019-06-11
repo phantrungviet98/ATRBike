@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { StyleSheet, TextInput, Text, View, TouchableOpacity, FlatList } from 'react-native';
+import { Alert, StyleSheet, Text, View, TouchableOpacity, AsyncStorage } from 'react-native';
 import { connect } from 'react-redux';
 import Header from '../Components/Header'
 import RentingBikeRedux from '../Redux/RentingBikeRedux'
 import { } from '../Redux/SignInRedux'
 import Loading from 'react-native-loading-spinner-overlay'
+import { lockSubcription } from '../Config/Global'
 
 class RentingBikeScreen extends Component {
 
@@ -14,20 +15,39 @@ class RentingBikeScreen extends Component {
             choosenLock: this.props.navigation.getParam('chosenLock'),
             spiner: false
         }
-        this.updateLockScreen = this.props.navigation.getParam('updateLockScreen')
     }
 
     static navigationOptions = {
         header: null
     }
 
+    _storeData = async (nextProps) => {
+      try {
+          const rentingSuccessStringtify = await AsyncStorage.getItem('rentingSuccessStringtify')
+          if (rentingSuccessStringtify === null) {
+              const rentingSuccessArray = [nextProps.rentingSuccessResponse.response]
+              console.log('rentingSuccessArray Renting 1: ', rentingSuccessArray)
+              await AsyncStorage.setItem('rentingSuccessStringtify', JSON.stringify(rentingSuccessArray));
+          }
+          else {
+              const rentingSuccessArray = JSON.parse(rentingSuccessStringtify)
+              rentingSuccessArray.push(nextProps.rentingSuccessResponse.response)
+              console.log('rentingSuccessArray Renting 2: ', rentingSuccessArray)
+              await AsyncStorage.setItem('rentingSuccessStringtify', JSON.stringify(rentingSuccessArray))
+          }
+      } catch (error) {
+          console.log('errrorrrrr: ', error)
+      }
+  };
+
     componentDidMount() {
-        
+
     }
 
     componentWillReceiveProps(nextProps) {
         this.setState({ isLoading: nextProps.isRequesting })
         const { navigation } = this.props
+
 
         if (nextProps.isRequesting === true) {
             this.setState({ isLoading: true })
@@ -35,14 +55,22 @@ class RentingBikeScreen extends Component {
         else {
             this.setState({ isLoading: false })
             if (nextProps.error !== null) {
-                alert(nextProps.error.message)
-                this.updateLockScreen()
+                alert(nextProps.error.message + '. Please try again')
                 navigation.goBack()
             }
             else {
-                alert('Renting successfully')
-                this.updateLockScreen()
-                navigation.goBack()
+                lockSubcription.next(nextProps.rentingSuccessResponse.response.lock._id)
+                
+                this._storeData(nextProps)
+
+                Alert.alert(
+                    'Notification',
+                    'Renting Successfully. Do you want to rent another bike ?',
+                    [
+                        { text: 'Yes, sure', onPress: () => navigation.goBack() },
+                        { text: 'No', onPress: () => navigation.navigate('RentingBikeSuccessfullyScreen') },
+                    ],
+                );
             }
         }
 

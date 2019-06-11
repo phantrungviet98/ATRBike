@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, TextInput, Text, View, TouchableOpacity, ImageBackground, Picker } from 'react-native';
+import { StyleSheet, TextInput, Text, View, TouchableOpacity, ImageBackground, Picker, AsyncStorage } from 'react-native';
 import { connect } from 'react-redux'
 import Header from '../Components/Header'
 import SignInRedux from '../Redux/SignInRedux'
@@ -69,9 +69,28 @@ class SignInScreen extends Component {
           alert(nextProps.error.message)
         }
         else {
-          navigation.navigate('StationScreen', { token: nextProps.token, user: nextProps.user })
+          if (this.isRenting) {
+            navigation.navigate('RentingBikeSuccessfullyScreen')
+          }
+          else {
+            navigation.navigate('StationScreen', { token: nextProps.token, user: nextProps.user })
+          }
         }
       }
+    }
+  }
+
+  isRenting = async () => {
+    try {
+      const rentingSuccessStringtify = await AsyncStorage.getItem('rentingSuccessStringtify')
+      if (rentingSuccessStringtify === null) {
+        return false
+      }
+      else {
+        return true
+      }
+    } catch (error) {
+      console.log(error)
     }
   }
 
@@ -90,7 +109,7 @@ class SignInScreen extends Component {
         source={{ uri: 'https://ant-tech.eu/wp-content/uploads/2017/06/logo-text.png' }}
         style={{ width: '100%', height: '100%' }}>
         <Header title='Sign In' />
-        <Loading visible={this.state.isLoading} textContent={'Loading...'}/>
+        <Loading visible={this.state.isLoading} textContent={'Loading...'} />
         <View style={{ flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center', margin: 10 }}>
           <TouchableOpacity onPress={() => this.props.navigation.navigate('SignUpScreen', { setRegisteredUser: this.getRegisteredUser })}>
             <View style={{ justifyContent: 'center', alignItems: 'center', width: 100, height: 30, backgroundColor: 'lightblue' }}>
@@ -131,7 +150,7 @@ class SignInScreen extends Component {
                 })
                 //buttonPressed to determine if navigating to StationScreen
                 this.setState({ buttonPressed: true })
-                console.log('after',this.state)
+                console.log('after', this.state)
               }}
             style={{ marginTop: 10 }}>
             <View style={{ justifyContent: 'center', alignItems: 'center', width: 150, height: 30, backgroundColor: 'orange' }}>

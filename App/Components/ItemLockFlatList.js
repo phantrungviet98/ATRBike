@@ -12,8 +12,10 @@ class ItemLockFlatList extends Component {
 
   render() {
     return (
-      <TouchableOpacity onPress={() => this.props.goToRentingScreen(this.props.item)}>
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'lightpink', padding: 10, }}>
+      <TouchableOpacity 
+      onPress={() => this.props.goToRentingScreen(this.props.item)}
+      >
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'lightblue', padding: 10, }}>
           <View>
             <Text>Name: {this.props.item.name}</Text>
             <Text>Serial: {this.props.item.serial}</Text>

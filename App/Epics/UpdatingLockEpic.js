@@ -10,25 +10,48 @@ export const updateLockEpic = (action$, state$) => action$.pipe(
   mergeMap(action => {
     const lockId = action.lockData._id
     const stations = state$.value.gettingStation.listStation
-    console.log(lockId)
-    console.log(stations)
+
+    // const newStations = stations.map(station => {
+    //   return station.locks.filter(lock => {
+    //     if (lock._id !== lockId) {
+    //       return true
+    //     }
+    //     return false
+    //   })
+    // })
 
     const newStations = stations.map(station => {
-      return station.locks.filter(lock => {
+      console.log('station 1', station)
+
+      const locks = station.locks.filter(lock => {
         if (lock._id !== lockId) {
           return true
         }
-        return false
       })
+
+      console.log('locks', locks)
+      station.locks = locks
+      
+      console.log('station: ', station)
+      return station
     })
 
-      // let locks = station.locks
-      // let newLocks = locks.filter((lock) => {
-      //   return lock._id !== lockId})
-      // station.locks = newLocks
-      // newListStations.push(station)
-    
+    const a = stations.map(station => {
 
-    console.log('newStation', newStations)
-  })
+    })
+
+    // let locks = station.locks
+    // let newLocks = locks.filter((lock) => {
+    //   return lock._id !== lockId})
+    // station.locks = newLocks
+    // newListStations.push(station)
+
+    console.log('newStation',newStations)
+
+    return newStations
+
+
+  }), map((newStations) => {
+    console.log('newSt: ',newStations)
+    GettingStationRedux.updateLockSuccess(newStations)})
 )

@@ -48,7 +48,7 @@ export const updateLockRequest = (state, action) => {
 export const updateLockSuccess = (state, action) => {
   console.log('updateLockSuccess', action)
   
-  return state.merge({ isRequesting: false })
+  return state.merge({ isRequesting: false, listStation: action.payload})
 }
 
 /* ------------- Hookup Reducers To Types ------------- */

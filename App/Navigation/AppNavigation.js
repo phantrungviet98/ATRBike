@@ -4,8 +4,8 @@ import SignInScreen from '../Containers/SignInScreen'
 import SignUpScreen from '../Containers/SignUpScreen'
 import StationScreen from '../Containers/StationScreen'
 import LockScreen from '../Containers/LockScreen'
-import RentingScreen from '../Containers/RentingBikeScreen'
-
+import RentingBikeScreen from '../Containers/RentingBikeScreen'
+import RentingBikeSuccessfullyScreen from '../Containers/RentingBikeSuccessfullyScreen'
 import styles from './Styles/NavigationStyles'
 
 // Manifest of possible screens
@@ -15,7 +15,8 @@ const PrimaryNav = createStackNavigator({
   SignUpScreen: { screen: SignUpScreen },
   StationScreen: { screen: StationScreen },
   LockScreen: { screen: LockScreen },
-  RentingScreen: { screen: RentingScreen}
+  RentingBikeScreen: { screen: RentingBikeScreen},
+  RentingBikeSuccessfullyScreen: { screen: RentingBikeSuccessfullyScreen }
 }, {
   // Default config for all screens
   headerMode: 'none',

@@ -6,6 +6,7 @@ import ItemLockFlatList from '../Components/ItemLockFlatList'
 import Header from '../Components/Header'
 import GettingStationRedux from '../Redux/GettingStationRedux'
 import SocketIOClient from 'socket.io-client'
+import {lockSubcription} from '../Config/Global'
 
 class LockScreen extends Component {
 
@@ -14,6 +15,18 @@ class LockScreen extends Component {
     this.state = {
       listLock: [],
     }
+    lockSubcription.subscribe({
+      next: (lockID) => this.setState({listLock: this.removeLock(lockID)}) 
+    })
+    
+  }
+
+  removeLock = (lockID) => {
+    return this.state.listLock.filter(lock => {
+      if(lock._id !== lockID) {
+        return true
+      }
+    }) 
   }
 
   static navigationOptions = {
@@ -33,36 +46,19 @@ class LockScreen extends Component {
     this.setState({
       listLock: this.props.navigation.getParam('stationLocks', [])
     })
-
-    const didFocusSubscription = this.props.navigation.addListener(
-      'didFocus',
-      payload => {
-        console.log('didFocus', payload);
-      }
-    );
-
-    // Remove the listener when you are done
-    didFocusSubscription.remove();
-
-    console.log('componendidmount lockscreen')
   };
 
-  componentWillMount = () => {
-    console.log('componenwillmount lockscreen')
-  }
-
-  componentWillUpdate = () => {
-    console.log('componenwillupdate lockscreen')
-
+  componentWillReceiveProps = (nextProps) => {
+    const chosenStation = nextProps.listStation.filter((station) => {
+      if(station.id === this.props.navigation.getParam('stationId', '-1')) {
+        return true
+      }
+    })
+    this.setState({listLock: chosenStation.locks})
   }
 
   onPressLock = (lock) => {
-    console.log(lock)
-    this.props.navigation.navigate('RentingScreen', { chosenLock: lock, updateLockScreen: this.reRender })
-  }
-
-  reRender = () => {
-    this.forceUpdate()
+    this.props.navigation.navigate('RentingBikeScreen', { chosenLock: lock})
   }
 
   render() {
@@ -89,12 +85,14 @@ class LockScreen extends Component {
   }
 }
 
-// const mapStateToProps = (state) => {
-
-// }
+const mapStateToProps = (state) => {
+  return {
+    listStation: state.gettingStation.listStation
+  }
+}
 
 // const mapDispatchToProps = (dispatch) => {
 //     gettingStation: () => dispatch(GettingStationRedux.GettingStationRequest)
 // }
 
-export default LockScreen
+export default connect(mapStateToProps)(LockScreen)
