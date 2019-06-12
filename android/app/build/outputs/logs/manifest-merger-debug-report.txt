@@ -5,6 +5,7 @@ INJECTED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifes
 INJECTED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:1:1-26:12
 INJECTED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:1:1-26:12
 MERGED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:1:1-26:12
+MERGED from [:@react-native-community_netinfo] C:\Users\PTV\Documents\ATRBike\node_modules\@react-native-community\netinfo\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-i18n] C:\Users\PTV\Documents\ATRBike\node_modules\react-native-i18n\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-gesture-handler] C:\Users\PTV\Documents\ATRBike\node_modules\react-native-gesture-handler\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [com.facebook.react:react-native:0.59.3] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\react-native-0.59.3.aar\5d5b45f552011b3a7e0182bcf8cc60e9\AndroidManifest.xml:2:1-13:12
@@ -131,6 +132,8 @@ uses-sdk
 INJECTED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml
+MERGED from [:@react-native-community_netinfo] C:\Users\PTV\Documents\ATRBike\node_modules\@react-native-community\netinfo\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:@react-native-community_netinfo] C:\Users\PTV\Documents\ATRBike\node_modules\@react-native-community\netinfo\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-i18n] C:\Users\PTV\Documents\ATRBike\node_modules\react-native-i18n\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-i18n] C:\Users\PTV\Documents\ATRBike\node_modules\react-native-i18n\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-gesture-handler] C:\Users\PTV\Documents\ATRBike\node_modules\react-native-gesture-handler\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
@@ -215,3 +218,7 @@ uses-permission#android.permission.SYSTEM_ALERT_WINDOW
 ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\debug\AndroidManifest.xml:5:5-77
 	android:name
 		ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\debug\AndroidManifest.xml:5:22-75
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [:@react-native-community_netinfo] C:\Users\PTV\Documents\ATRBike\node_modules\@react-native-community\netinfo\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:9:5-79
+	android:name
+		ADDED from [:@react-native-community_netinfo] C:\Users\PTV\Documents\ATRBike\node_modules\@react-native-community\netinfo\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:9:22-76

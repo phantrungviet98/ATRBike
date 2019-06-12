@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import Header from '../Components/Header'
 import SignInRedux from '../Redux/SignInRedux'
 import Loading from 'react-native-loading-spinner-overlay'
+import NetInfo from '@react-native-community/netinfo'
 
 
 class SignInScreen extends Component {
@@ -15,7 +16,8 @@ class SignInScreen extends Component {
       phoneNumber: -1,
       password: '',
       isLoading: false,
-      buttonPressed: false
+      buttonPressed: false,
+      hasInternetConnection: false
     }
   }
 
@@ -23,6 +25,31 @@ class SignInScreen extends Component {
     header: null
   }
 
+
+  componentWillMount() {
+    NetInfo.isConnected.fetch().then(isConnected => {
+     if(!isConnected) {
+       alert('Please check connection!!')
+     }
+    });
+    function handleFirstConnectivityChange(isConnected) {
+      if(!isConnected) {
+        alert('Please check connection!!')
+      }
+      NetInfo.isConnected.removeEventListener(
+        'connectionChange',
+        handleFirstConnectivityChange
+      );
+    }
+    NetInfo.isConnected.addEventListener(
+      'connectionChange',
+      handleFirstConnectivityChange
+    );
+  }
+
+  componentDidMount() {
+    
+  }
 
   // requestSignIn = () => {
   //     fetch('http://api.appebike.com:4000/v1/shared/auth/sign-in', {
@@ -57,7 +84,6 @@ class SignInScreen extends Component {
 
 
   componentWillReceiveProps(nextProps) {
-    console.log('nextProps', nextProps)
     const { navigation } = this.props
     if (this.state.buttonPressed == true) {
       if (nextProps.isRequesting === true) {
@@ -69,29 +95,20 @@ class SignInScreen extends Component {
           alert(nextProps.error.message)
         }
         else {
-          if (this.isRenting) {
-            navigation.navigate('RentingBikeSuccessfullyScreen')
-          }
-          else {
-            navigation.navigate('StationScreen', { token: nextProps.token, user: nextProps.user })
-          }
+          this.getDataFromStore().then(data => {
+            if (!data) {
+              navigation.navigate('StationScreen', { token: nextProps.token, user: nextProps.user })
+            } else {
+              navigation.navigate('RentingBikeSuccessfullyScreen')
+            }
+          })
         }
       }
     }
   }
 
-  isRenting = async () => {
-    try {
-      const rentingSuccessStringtify = await AsyncStorage.getItem('rentingSuccessStringtify')
-      if (rentingSuccessStringtify === null) {
-        return false
-      }
-      else {
-        return true
-      }
-    } catch (error) {
-      console.log(error)
-    }
+  getDataFromStore = async () => {
+    return await AsyncStorage.getItem(this.props.user.phoneNumber + '')
   }
 
   //get User from SignUpScreen
@@ -103,7 +120,6 @@ class SignInScreen extends Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <ImageBackground
         source={{ uri: 'https://ant-tech.eu/wp-content/uploads/2017/06/logo-text.png' }}

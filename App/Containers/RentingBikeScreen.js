@@ -23,17 +23,17 @@ class RentingBikeScreen extends Component {
 
     _storeData = async (nextProps) => {
       try {
-          const rentingSuccessStringtify = await AsyncStorage.getItem('rentingSuccessStringtify')
+          const rentingSuccessStringtify = await AsyncStorage.getItem(this.props.user.phoneNumber.toString())
           if (rentingSuccessStringtify === null) {
               const rentingSuccessArray = [nextProps.rentingSuccessResponse.response]
               console.log('rentingSuccessArray Renting 1: ', rentingSuccessArray)
-              await AsyncStorage.setItem('rentingSuccessStringtify', JSON.stringify(rentingSuccessArray));
+              await AsyncStorage.setItem(this.props.user.phoneNumber.toString(), JSON.stringify(rentingSuccessArray));
           }
           else {
               const rentingSuccessArray = JSON.parse(rentingSuccessStringtify)
               rentingSuccessArray.push(nextProps.rentingSuccessResponse.response)
               console.log('rentingSuccessArray Renting 2: ', rentingSuccessArray)
-              await AsyncStorage.setItem('rentingSuccessStringtify', JSON.stringify(rentingSuccessArray))
+              await AsyncStorage.setItem(this.props.user.phoneNumber.toString(), JSON.stringify(rentingSuccessArray))
           }
       } catch (error) {
           console.log('errrorrrrr: ', error)
@@ -117,6 +117,7 @@ const mapStateToProps = (state) => {
     console.log('state renting bike', state)
     return {
         token: state.signIn.token,
+        user: state.signIn.user,
         rentingSuccessResponse: state.rentingBike.rentingSuccessResponse,
         isRequesting: state.rentingBike.isRequesting,
         error: state.rentingBike.error
