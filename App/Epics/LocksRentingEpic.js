@@ -19,7 +19,6 @@ export const locksRentingEpic = action$ => action$.pipe(
       }
     }).pipe(
       map(response => {
-          console.log('response',response)
         return LocksRentingRedux.locksRentingSuccess(response.response)
       }),
       catchError(error => {

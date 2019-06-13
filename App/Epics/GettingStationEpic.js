@@ -26,7 +26,6 @@ export const gettingStationEpic = action$ => action$.pipe(
         })
       }),
       catchError(error => {
-        console.log(response)
         return of(
           GettingStationRedux.gettingStationFailure(error.response)
         )

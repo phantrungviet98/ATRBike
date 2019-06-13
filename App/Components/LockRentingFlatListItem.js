@@ -15,7 +15,7 @@ class LockRentingFlatListItem extends Component {
     
     return (
       <TouchableOpacity
-      >
+      onPress={() => {this.props.setRentedDuration(this.props.item.createdAt)}}>
         <View style={LockRentingFlatListItemStyles.itemContainer}>
           <View>
             <Text>Name: {this.props.item.lock.name}</Text>

@@ -15,7 +15,6 @@ class ItemStationFlatList extends Component {
         return (
 
             <TouchableOpacity onPress={() => {
-                console.log(this.props.item.locks)
                 this.props.goToLockScreen(this.props.item.id, this.props.item.locks)
             }}>
                 <View style={styles.itemStyle}>

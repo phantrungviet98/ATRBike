@@ -3,13 +3,13 @@ import {signInEpic} from './SignInEpic'
 import { signUpEpic } from './SignUpEpic';
 import { gettingStationEpic } from './GettingStationEpic'
 import { rentingBikeEpic } from "./RentingBikeEpic";
-import { updateLockEpic } from './UpdatingLockEpic'
 import { locksRentingEpic } from './LocksRentingEpic'
+import { pingEpic } from './PingEpic'
 export const rootEpic = combineEpics(
   signInEpic,
   signUpEpic,
   gettingStationEpic,
   rentingBikeEpic,
-  updateLockEpic,
-  locksRentingEpic
+  locksRentingEpic,
+  pingEpic
 );

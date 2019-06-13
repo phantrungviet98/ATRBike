@@ -2,14 +2,15 @@ import { ofType } from 'redux-observable'
 import { map, mergeMap, catchError } from 'rxjs/operators'
 import { ajax } from 'rxjs/ajax'
 import { of } from 'rxjs'
-import GettingLockRedux, { GettingLockTypes } from '../Redux/GettingLockRedux'
+import AppConfig from '../Config/AppConfig'
+import PingRedux, { PingTypes } from '../Redux/PingRedux'
 
 
-export const gettingStationEpic = action$ => action$.pipe(
-  ofType(GettingStationTypes.GETTING_STATION_REQUEST),
+export const pingEpic = action$ => action$.pipe(
+  ofType(PingTypes.PING_REQUEST),
   mergeMap(action =>
     ajax({
-      url: 'http://api.appebike.com:4000/v1/shared/stations?populate=locks',
+      url: AppConfig.HOST + ':' + AppConfig.PORT + '/v1/shared/auth/ping',
       method: 'GET',
       headers: {
         Accept: 'application/json',
@@ -20,13 +21,11 @@ export const gettingStationEpic = action$ => action$.pipe(
       }
     }).pipe(
       map(response => {
-        return GettingStationRedux.gettingStationSuccess({
-          listStation: response.response.results
-        })
+        return PingRedux.pingSuccess(response.response)
       }),
       catchError(error => {
         return of(
-          GettingStationRedux.gettingStationFailure(error.response)
+            PingRedux.pingSuccess(error.response)
         )
       })
     )

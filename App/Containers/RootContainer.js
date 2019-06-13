@@ -54,7 +54,6 @@ class RootContainer extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log('state Roottt', state)
   return {
     listStation: state.gettingStation.listStation
   }

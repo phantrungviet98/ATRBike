@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Alert, StyleSheet, TextInput, Text, View, TouchableOpacity, FlatList, AsyncStorage } from 'react-native';
+import { Alert, StyleSheet, TextInput, Text, View, TouchableOpacity, FlatList, AsyncStorage, Easing } from 'react-native';
 import { connect } from 'react-redux';
 import Header from '../Components/Header'
 import RentingBikeRedux from '../Redux/RentingBikeRedux'
@@ -9,6 +9,8 @@ import { lockSubcription } from '../Config/Global'
 import moment from 'moment'
 import NetInfo from '@react-native-community/netinfo'
 import LockRentingFlatListItem from '../Components/LockRentingFlatListItem'
+import Drawer from 'react-native-drawer-menu'
+import drawerContent from '../Components/Drawer'
 
 class RentingBikeSuccessfullyScreen extends Component {
 
@@ -18,8 +20,10 @@ class RentingBikeSuccessfullyScreen extends Component {
       isLoading: false,
       rentedTime: 0,
       isConnected: false,
-      duration: {}
+      duration: {hours: -1, minutes: -1},
+      payment: 0
     }
+    this.durationInterval
   }
 
   static navigationOptions = {
@@ -27,12 +31,10 @@ class RentingBikeSuccessfullyScreen extends Component {
   }
 
   _retrieveData = async () => {
-    console.log('rentingSuccessStringtify 1')
     try {
       const rentingSuccessStringtify = await AsyncStorage.getItem('rentingSuccessStringtify');
       if (rentingSuccessStringtify !== null) {
         // We have data!!
-        console.log('rentingSuccessStringtify', rentingSuccessStringtify)
         this.setState({
           rentingSuccessList: JSON.parse(rentingSuccessStringtify)
         })
@@ -44,6 +46,10 @@ class RentingBikeSuccessfullyScreen extends Component {
     }
   }
 
+  returnBike = (id, stationID) => {
+
+  }
+
   componentWillMount() {
   }
 
@@ -52,41 +58,75 @@ class RentingBikeSuccessfullyScreen extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-
   }
 
-  setTimeState = (createAt) => {
+
+  setRentedDurationInterval = (createdAt) => {
+    clearInterval(this.durationInterval)
+    this.setRentedDuration(createdAt)
+    this.durationInterval = setInterval(this.setRentedDuration, 60*1000, createdAt)
+  }
+
+  
+
+  setRentedDuration = (createdAt) => {
     const now = moment()
-    const createdAt = moment(createAt)
-    const c = now.diff(createdAt)
-    time = moment.duration(c)
-    this.setState({duration: time})
+    const createdAtMoment = moment(createdAt)
+    const temp = now.diff(createdAtMoment)
+    const minutes = now.diff(createdAtMoment, 'minutes')
+    const duration = moment.duration(temp)
+    this.setState({payment: Math.floor(minutes/30)*3 + 3})
+    this.setState({duration: {hours: duration.hours(), minutes: duration.minutes()}})
   }
  
+  
+
   render() {
+
+    const rentingDuration = `Amount of rented duration: ${this.state.duration.hours} hours ${this.state.duration.minutes} minutes`
+    const rentingPayment =  `Payment: ${this.state.payment} EUR`
+
+    // var drawerContent = (<View style={{flex: 1, backgroundColor: 'white'}}>
+    //   <View/>
+    //   <View>
+    //     <View><Text>Drawer Content</Text></View>
+    //   </View>
+    // </View>);
+     var customStyles = {
+      drawer: {
+        shadowColor: '#000',
+        shadowOpacity: 0.4,
+        shadowRadius: 10
+      },
+      mask: {}, // style of mask if it is enabled
+      main: {} // style of main board
+    };
+
+
     return (
-      <View style={{ flex: 1 }}>
+      <Drawer  drawerWidth={300}
+      drawerContent={drawerContent}
+      type={Drawer.types.Overlay}
+      onDrawerOpen={() => {console.log('Drawer is opened');}}
+      onDrawerClose={() => {console.log('Drawer is closed')}}
+      easingFunc={Easing.ease}>
+        <View style={{ flex: 1 }}>
         <Header title='Renting Bike Successfully List' goBack={() => this.props.navigation.goBack()} />
         <Loading visible={this.state.isLoading} textContent={'Loading...'} />
         <View style={styles.TimeContainer}>
-          
+          <Text style={styles.TimeText}> {(this.state.duration.hour !== -1 && this.state.duration.hours !== -1) ? rentingDuration : 'Wellcome!!. Choose any lock to see information'} </Text>
+          <Text style={styles.TimeText}> {(this.state.duration.hour !== -1 && this.state.duration.hours !== -1) ? rentingPayment : ''}</Text>
         </View>
         <FlatList
           data={this.props.locksRentingList}
-          renderItem={({ item }) => {
-            setInterval(() => {
-              const now = moment()
-              const createdAt = moment(item.createdAt)
-              const c = now.diff(createdAt)
-              time = moment.duration(c)
-
-              console.log(time.hours() + 'time' + time.minutes())
-            }, 3000)
-            
-            return <LockRentingFlatListItem item={item} hours={this.state.hours} minutes={this.state.minutes}></LockRentingFlatListItem>
-          }}
+          renderItem={({ item }) => <LockRentingFlatListItem item={item} setRentedDuration={this.setRentedDurationInterval}/>
+          }
           keyExtractor={(item, index) => index.toString()} />
       </View>
+
+      </Drawer>
+
+      
     )
   }
 }
@@ -104,8 +144,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   TimeContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
     height: 100,
-    backgroundColor: 'lightpink'
+    backgroundColor: 'lightpink',
+  },
+  TimeText: {
+    fontSize: 15,
+    fontWeight: 'bold'
   }
 })
 

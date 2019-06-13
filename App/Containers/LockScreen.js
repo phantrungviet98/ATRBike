@@ -33,11 +33,6 @@ class LockScreen extends Component {
     header: null
   }
 
-  // setPopupVisible = (isVisible) => {
-  //     console.log(isVisible)
-  //     this.setState({popupVisible: Boolean(isVisible)})
-  // }
-
   getStationLock = () => {
 
   }

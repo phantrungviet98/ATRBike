@@ -26,12 +26,7 @@ class SignUpScreen extends Component {
     header: null
   }
 
-  componentDidMount() {
-    console.log('didmount:', this.props)
-  }
-
   componentWillReceiveProps(nextProps) {
-    console.log('nextProps', nextProps)
     const {navigation} = this.props
     if(nextProps.isRequesting === true) {
       this.setState({spiner: true})
@@ -54,40 +49,6 @@ class SignUpScreen extends Component {
       }
     }
   }
-
-  // sidcgnUpRequest = () => {
-  //     fetch('http://api.appebike.com:4000/v1/shared/auth/sign-up', {
-  //         method: 'POST',
-  //         headers: {
-  //             Accept: 'application/json',
-  //             'Content-Type': 'application/json',
-  //             'app-id': 'c0c45117-7a5b-4169-b1fc-06178cdef31a',
-  //             'secret-key': 'adb56c27-ea8d-49a8-a94d-68a1d4cb4d80'
-  //         },
-  //         body: JSON.stringify({
-  //             "username": this.state.username,
-  //             "email": this.state.email,
-  //             "phoneNumber": parseInt(this.state.phoneNumber),
-  //             "countryCode": parseInt(this.state.countryCode),
-  //             "password": this.state.password
-  //         }),
-  //     })
-  //         .then((response) => response.json())
-  //         .then((responseJson) => {
-  //             console.log(Creators)
-
-  //             if ('token' in responseJson) {
-  //                 alert('Chúc mừng bạn đã đăng kí thành công.')
-  //                 this.props.navigation.navigate('SignIn')
-  //             } else {
-  //                 console.log(JSON.stringify(responseJson.message))
-  //                 alert(responseJson.message.constraints)
-  //             }
-  //         })
-  //         .catch((error) => {
-  //             console.error(error);
-  //         });
-  // }
 
   render() {
     return (
@@ -149,7 +110,7 @@ class SignUpScreen extends Component {
                 "password": "123456"
               })
             }}>
-            <View style={{ justifyContent: 'center', alignItems: 'center', width: 150, height: 30, backgroundColor: 'orange' }}>
+            <View style={styles.signUpButton}>
               <Text>Sign Up</Text>
             </View>
           </TouchableOpacity>
@@ -186,5 +147,13 @@ const styles = StyleSheet.create({
     width: 200,
     justifyContent: 'center',
     backgroundColor: 'white'
+  },
+  signUpButton: { 
+    justifyContent: 'center', 
+    alignItems: 'center', 
+    width: 150, 
+    height: 30, 
+    backgroundColor: 'orange',
+    borderRadius:  5
   }
 })

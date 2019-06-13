@@ -26,13 +26,11 @@ class RentingBikeScreen extends Component {
           const rentingSuccessStringtify = await AsyncStorage.getItem(this.props.user.phoneNumber.toString())
           if (rentingSuccessStringtify === null) {
               const rentingSuccessArray = [nextProps.rentingSuccessResponse.response]
-              console.log('rentingSuccessArray Renting 1: ', rentingSuccessArray)
               await AsyncStorage.setItem(this.props.user.phoneNumber.toString(), JSON.stringify(rentingSuccessArray));
           }
           else {
               const rentingSuccessArray = JSON.parse(rentingSuccessStringtify)
               rentingSuccessArray.push(nextProps.rentingSuccessResponse.response)
-              console.log('rentingSuccessArray Renting 2: ', rentingSuccessArray)
               await AsyncStorage.setItem(this.props.user.phoneNumber.toString(), JSON.stringify(rentingSuccessArray))
           }
       } catch (error) {
@@ -78,7 +76,6 @@ class RentingBikeScreen extends Component {
 
     render() {
         const { choosenLock } = this.state
-        console.log(choosenLock)
         return (
             <View style={{ flex: 1 }}>
                 <Header title='Renting' goBack={() => this.props.navigation.goBack()} />
@@ -114,7 +111,6 @@ const styles = StyleSheet.create({
 })
 
 const mapStateToProps = (state) => {
-    console.log('state renting bike', state)
     return {
         token: state.signIn.token,
         user: state.signIn.user,

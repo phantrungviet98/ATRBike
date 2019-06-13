@@ -16,7 +16,8 @@ export const reducers = combineReducers({
   gettingStation: require('./GettingStationRedux').reducer,
   gettingLock: require('./GettingLockRedux').reducer,
   rentingBike: require('./RentingBikeRedux').reducer,
-  locksRenting: require('./LocksRentingRedux').reducer
+  locksRenting: require('./LocksRentingRedux').reducer,
+  ping: require('./PingRedux').reducer
 })
 
 
