@@ -14,8 +14,8 @@ export default Creators
 /* ------------- Initial State ------------- */
 
 export const INITIAL_STATE = Immutable({
-  value : '',
-  isRequesting: false,
+  value : 'notpong',
+  status: 'deactivated',
   error: null
 
 })
@@ -24,17 +24,17 @@ export const INITIAL_STATE = Immutable({
 
 export const pingRequest = (state, action) => {
   console.log('pingRequest', INITIAL_STATE)
-  return state.merge({isRequesting: true})
+  return state.merge({status: 'activated'})
 }
 
 export const pingSuccess = (state, action) => {
   console.log('pingSuccess', action)
-  return state.merge({isRequesting: false, value: action.response.value, error: null})
+  return state.merge({status: 'finished', value: action.response.value, error: null})
 }
 
 export const pingFailure = (state, action) => {
   console.log('pingFailure', action)
-  return state.merge({isRequesting: false,  value: '', error: action.error})
+  return state.merge({status: 'finished',  value: '', error: action.error})
 }
 
 /* ------------- Hookup Reducers To Types ------------- */

@@ -15,7 +15,7 @@ export default Creators
 
 export const INITIAL_STATE = Immutable({
   rentingSuccessResponse: {} ,
-  isRequesting: false,
+  status: 'deactivated',
   error: null
 
 })
@@ -24,17 +24,17 @@ export const INITIAL_STATE = Immutable({
 
 export const rentingBikeRequest = (state, action) => {
   console.log('rentingBikeRequest', INITIAL_STATE)
-  return state.merge({isRequesting: true})
+  return state.merge({status: 'activated'})
 }
 
 export const rentingBikeSuccess = (state, action) => {
   console.log('rentingBikeSuccess', action)
-  return state.merge({isRequesting: false, rentingSuccessResponse: action.response, error: null})
+  return state.merge({status: 'finished', rentingSuccessResponse: action.response, error: null})
 }
 
 export const rentingBikeFailure = (state, action) => {
   console.log('rentingBikeFailure', action)
-  return state.merge({isRequesting: false,  rentingSuccessResponse: {}, error: action.error})
+  return state.merge({status: 'finished',  rentingSuccessResponse: {}, error: action.error})
 }
 
 /* ------------- Hookup Reducers To Types ------------- */

@@ -4,14 +4,16 @@ import { connect } from 'react-redux'
 import ItemStationFlatList from '../Components/ItemStationFlatList'
 import Header from '../Components/Header'
 import GettingStationRedux from '../Redux/GettingStationRedux'
+import Requesting from 'react-native-loading-spinner-overlay'
+import SignInRedux from '../Redux/SignInRedux'
+import LocksRentingRedux from '../Redux/LocksRentingRedux'
 
 class StationScreen extends Component {
 
   constructor(props) {
     super(props)
     this.state = {
-      listStation: [],
-      spiner: false
+
     }
   }
 
@@ -20,37 +22,31 @@ class StationScreen extends Component {
   }
 
   componentDidMount() {
-    const token =  this.props.navigation.getParam('token')
-    this.props.gettingStation(token)
+    const token = this.props.navigation.getParam('token')
+    this.props.gettingStation(!!!token ? token : this.props.token )
+  }
+
+  componentWillMount() {
+    
+  }
+
+  componentWillUpdate() {
+
   }
 
   componentWillReceiveProps(nextProps) {
-    const { navigation } = this.props
-    
-      if (nextProps.isRequesting === true) {
-        this.setState({ spiner: true })
-      }
-      else {
-        this.setState({ spiner: false })
-        if (nextProps.error !== null) {
-          alert(nextProps.error.message ? nextProps.error.message : 'error')
-        }
-        else {
-          this.setState({
-            listStation: nextProps.listStation
-          })
-        }
-      }
-    
   }
 
+
+
   onPressStation = (stationId, locks) => {
-      this.props.navigation.navigate('LockScreen', {stationId: stationId, stationLocks: locks})
+    this.props.navigation.navigate('LockScreen', { stationId: stationId, stationLocks: locks })
   }
 
   render() {
     return (
       <View style={{ flex: 1 }}>
+        <Requesting visible={this.props.isRequesting} textContent={'StatLoading...'} />
         <Header title='Station' />
         <View>
           <FlatList data={this.props.listStation}
@@ -62,17 +58,17 @@ class StationScreen extends Component {
     )
   }
 }
-
 mapStateToProps = (state) => {
   return {
+    token: state.signIn.token,
     listStation: state.gettingStation.listStation,
-    isRequesting: state.gettingStation.isRequesting,
-    error: state.gettingStation.error
+    isGettingStationRequesting: state.locksRenting.isRequesting,
+    error: state.gettingStation.error,
   }
 }
 mapDispatchToProps = (dispatch) => {
   return {
-    gettingStation: (token) => dispatch(GettingStationRedux.gettingStationRequest(token))
+    gettingStation: (token) => dispatch(GettingStationRedux.gettingStationRequest(token)),
   }
 }
 

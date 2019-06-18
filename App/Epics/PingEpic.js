@@ -4,7 +4,7 @@ import { ajax } from 'rxjs/ajax'
 import { of } from 'rxjs'
 import AppConfig from '../Config/AppConfig'
 import PingRedux, { PingTypes } from '../Redux/PingRedux'
-
+import LocksRentingRedux from '../Redux/LocksRentingRedux'
 
 export const pingEpic = action$ => action$.pipe(
   ofType(PingTypes.PING_REQUEST),
@@ -21,6 +21,7 @@ export const pingEpic = action$ => action$.pipe(
       }
     }).pipe(
       map(response => {
+        console.log('action.token',action.token)
         return PingRedux.pingSuccess(response.response)
       }),
       catchError(error => {

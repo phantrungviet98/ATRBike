@@ -17,14 +17,25 @@ class SignInScreen extends Component {
       countryCode: 84,
       phoneNumber: -1,
       password: '',
-      isLoading: false,
-      buttonPressed: false,
       hasInternetConnection: false
     }
+    this.token = ''
+    this.checkSignIn = true
+    this.checkLocksRenting = true
+
   }
 
   static navigationOptions = {
     header: null
+  }
+
+
+  storeToken = async (token) => {
+    try {
+      await AsyncStorage.setItem('token', token)
+    } catch (error) {
+      console.log('storeToken Error: ', error)
+    }
   }
 
 
@@ -49,123 +60,128 @@ class SignInScreen extends Component {
     );
   }
 
-  componentDidMount() {
-    this.getTokenFromStore().then(token => {
-      if (token) {
-        this.props.ping(token)
-        this.props.locksRenting(token)
-      }
-    })
-  }
-
   componentWillReceiveProps(nextProps) {
-    console.log('nextProps', nextProps)
     const { navigation } = this.props
-    if (this.props.pingValue === 'pong') {
-      console.log('this.props.locksRentingList',this.props.locksRentingList.length > 0)
-      if (this.props.locksRentingList.length > 0) {
-        navigation.navigate('RentingBikeSuccessfullyScreen')
-      } else {
-        navigation.navigate('StationScreen', { token: nextProps.token, user: nextProps.user })
+    console.log('sdfsdfasdf', nextProps)
+    console.log(this.checkLocksRenting)
+      if (!this.checkSignIn && nextProps.signInStatus == 'finished') {
+        this.checkSignIn = true
+        console.log('t', nextProps.signInStatus)
+        console.log('props porps', nextProps)
+        if (nextProps.signInError !== null) {
+          alert(nextProps.error.message)
+        }
+        else {
+          this.storeToken(nextProps.token)
+          console.log('sgingdf, toke', nextProps.token)
+          this.token = nextProps.token
+          this.checkLocksRenting = false
+          this.props.locksRenting(nextProps.token)
+        }
       }
-    }
 
-    // if (this.state.buttonPressed == true) {
-    //   if (nextProps.isRequesting === true) {
-    //     this.setState({ isLoading: true })
+      if(!this.checkLocksRenting && nextProps.locksRentingStatus == 'finished') {
+        console.log('props viet', nextProps)
+        if(nextProps.locksRentingList.length > 0) {
+          navigation.navigate('RentingBikeSuccessfullyScreen', {token: nextProps.token})
+        } else {
+          navigation.navigate('StationScreen', {token: nextProps.token})
+        }
+      }
+
+      console.log(nextProps)
+
+
+
+    //   }
+    // }
+
+    // Handel auto sign in
+    // if (!this.checkAutoSignIn && nextProps.isPingRequesting === false) {
+    //   this.checkAutoSignIn = true
+
+    //   // auto sign in success
+    //   if (nextProps.pingValue === 'pong') {
+    //     this.props.locksRenting(this.token)
+    //     this.checkLocks = false
+    //   } else { // auto sign in fail
+    //     // Do something
+    //   }
+    // }
+
+    // // Handel get locks
+    // if (!this.checkLocks && nextProps.isLocksRentingRequesting === false) {
+    //   if (nextProps.locksRentingList.length > 0) {
+    //     navigation.navigate('RentingBikeSuccessfullyScreen')
     //   }
     //   else {
-    //     this.setState({ isLoading: false })
-    //     if (nextProps.error !== 'null') {
-    //       alert(nextProps.error.message)
-    //     }
-    //     else {
-    //       this.storeToken(nextProps.token)
-    //       navigation.navigate('StationScreen', { token: nextProps.token, user: nextProps.user })
-    //     }
-
+    //     navigation.navigate('StationScreen', { token: this.token })
     //   }
     // }
   }
 
 
-storeToken = async (token) => {
-  try {
-    await AsyncStorage.setItem('token', token)
-  } catch (error) {
-    console.log('storeToken Error: ', error)
+
+
+
+  render() {
+    return (
+      <ImageBackground
+        source={{ uri: 'https://ant-tech.eu/wp-content/uploads/2017/06/logo-text.png' }}
+        style={{ width: '100%', height: '100%' }}>
+        <Header title='Sign In' />
+        <Loading visible={(this.props.isSignInRequesting || this.props.isLocksRentingRequesting) } textContent={'Loading...'} />
+        <View style={{ flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center', margin: 10 }}>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('SignUpScreen', { setRegisteredUser: this.getRegisteredUser })}>
+            <View style={styles.signUpButton}>
+              <Text>Sign Up</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+        <View style={{ flex: 1, justifyContent: 'flex-end', alignItems: 'center', margin: 10 }}>
+          <Picker style={styles.textInput} selectedValue={this.state.countryCode} onValueChange={(itemValue, itemIndex) => {
+            this.setState({ countryCode: parseInt(itemValue) })
+          }}>
+            <Picker.Item label='+84' value='84' />
+            <Picker.Item label='+33' value='33' />
+            <Picker.Item label='+55' value='55' />
+          </Picker>
+          <TextInput
+            onChangeText={(text) => this.setState({ phoneNumber: parseInt(text) })}
+            style={styles.textInput}
+            placeholder='Enter your phone number'
+            textContentType='telephoneNumber'
+            keyboardType='numeric'
+            // defaultValue = {user.phoneNumber ? user.phoneNumber.toString(10) : ''}
+            maxLength={9}
+            defaultValue={this.state.phoneNumber == -1 ? '' : this.state.phoneNumber.toString()} />
+          <TextInput
+            onChangeText={(text) => this.setState({ password: text })}
+            style={styles.textInput}
+            placeholder='Enter your password'
+            textContentType='password'
+            secureTextEntry={true} />
+          <TouchableOpacity
+            onPress={
+              () => {
+                //buttonPressed to determine if navigating to which screen
+                this.checkSignIn = false
+
+                this.props.signIn({
+                  countryCode: 84,
+                  phoneNumber: 918718610,
+                  password: '123456'
+                })
+              }}
+            style={{ marginTop: 10 }}>
+            <View style={styles.loginButton}>
+              <Text>Login</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+      </ImageBackground>
+    )
   }
-};
-
-getTokenFromStore = async () => {
-  return await AsyncStorage.getItem('token')
-}
-
-//get User from SignUpScreen
-getRegisteredUser = (registeredUser) => {
-  this.setState({
-    phoneNumber: registeredUser.phoneNumber,
-    countryCode: registeredUser.countryCode
-  })
-}
-
-render() {
-  return (
-    <ImageBackground
-      source={{ uri: 'https://ant-tech.eu/wp-content/uploads/2017/06/logo-text.png' }}
-      style={{ width: '100%', height: '100%' }}>
-      <Header title='Sign In' />
-      <Loading visible={this.state.isLoading} textContent={'Loading...'} />
-      <View style={{ flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center', margin: 10 }}>
-        <TouchableOpacity onPress={() => this.props.navigation.navigate('SignUpScreen', { setRegisteredUser: this.getRegisteredUser })}>
-          <View style={styles.signUpButton}>
-            <Text>Sign Up</Text>
-          </View>
-        </TouchableOpacity>
-      </View>
-      <View style={{ flex: 1, justifyContent: 'flex-end', alignItems: 'center', margin: 10 }}>
-        <Picker style={styles.textInput} selectedValue={this.state.countryCode} onValueChange={(itemValue, itemIndex) => {
-          this.setState({ countryCode: parseInt(itemValue) })
-        }}>
-          <Picker.Item label='+84' value='84' />
-          <Picker.Item label='+33' value='33' />
-          <Picker.Item label='+55' value='55' />
-        </Picker>
-        <TextInput
-          onChangeText={(text) => this.setState({ phoneNumber: parseInt(text) })}
-          style={styles.textInput}
-          placeholder='Enter your phone number'
-          textContentType='telephoneNumber'
-          keyboardType='numeric'
-          // defaultValue = {user.phoneNumber ? user.phoneNumber.toString(10) : ''}
-          maxLength={9}
-          defaultValue={this.state.phoneNumber == -1 ? '' : this.state.phoneNumber.toString()} />
-        <TextInput
-          onChangeText={(text) => this.setState({ password: text })}
-          style={styles.textInput}
-          placeholder='Enter your password'
-          textContentType='password'
-          secureTextEntry={true} />
-        <TouchableOpacity
-          onPress={
-            () => {
-              this.props.signIn({
-                countryCode: 84,
-                phoneNumber: 918718610,
-                password: '123456'
-              })
-              //buttonPressed to determine if navigating to StationScreen
-              this.setState({ buttonPressed: true })
-            }}
-          style={{ marginTop: 10 }}>
-          <View style={styles.loginButton}>
-            <Text>Login</Text>
-          </View>
-        </TouchableOpacity>
-      </View>
-    </ImageBackground>
-  )
-}
 }
 
 // const mapStateToProps = (state) => {
@@ -180,18 +196,18 @@ const mapStateToProps = (state) => {
   return {
     token: state.signIn.token,
     user: state.signIn.user,
-    isRequesting: state.signIn.isRequesting,
-    error: state.signIn.error,
-    pingValue: state.ping.value,
-    locksRentingList: state.locksRenting.locksRentingList
+    signInStatus: state.signIn.status,
+    locksRentingStatus: state.locksRenting.status,
+    locksRentingList: state.locksRenting.locksRentingList,
+    signInError: state.signIn.error,
+    locksRentingError: state.locksRenting.error
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     signIn: (contentSignInRequest) => dispatch(SignInRedux.signInRequest(contentSignInRequest)),
-    locksRenting: (token) => dispatch(LocksRentingRedux.locksRentingRequest(token)),
-    ping: (token) => dispatch(PingRedux.pingRequest(token))
+    locksRenting: (token) => dispatch(LocksRentingRedux.locksRentingRequest(token))
   }
 }
 

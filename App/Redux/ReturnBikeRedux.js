@@ -4,7 +4,7 @@ import Immutable from 'seamless-immutable'
 /* ------------- Types and Action Creators ------------- */
 
 const { Types, Creators } = createActions({
-  returnBikeRequest: ['contentReturnBikeRequest'],
+  returnBikeRequest: ['token', 'contentReturnBikeRequest'],
   returnBikeSuccess: ['response'],
   returnBikeFailure: ['error'],
 })
@@ -15,36 +15,34 @@ export default Creators
 /* ------------- Initial State ------------- */
 
 export const INITIAL_STATE = Immutable({
-  token: null,
-  user: {},
-  isRequesting: false,
+  duration: -1,
+  amount: -1,
+  status: 'deactivated',
   error: null
 })
 
 /* ------------- Reducers ------------- */
 
-export const signInRequest = (state, action) => {
-  console.log('signInRequest', INITIAL_STATE)
-  return state.merge({isRequesting: true})
+export const returnBikeRequest = (state, action) => {
+  console.log('returnBikeRequest', INITIAL_STATE)
+  return state.merge({status: 'activated'})
 }
 
-export const signInSuccess = (state, action) => {
-  console.log('signSuccess', action)
-  return state.merge({isRequesting: false, token: action.response.token, user: action.response.user, error: null})
+export const returnBikeSuccess = (state, action) => {
+  console.log('returnBikeSuccess', action)
+  return state.merge({status: 'finished', duration: action.response.response.duration, amount: action.response.response.amount, error: null})
 }
 
-export const signInFailure = (state, action) => {
-  console.log('signFailure', action)
-  return state.merge({isRequesting: false, error: action.error, token: null, user: {}})
+export const returnBikeFailure = (state, action) => {
+  console.log('returnBikeFailure', action)
+  return state.merge({status: 'finished', duration: -1, amount: -1,  error: action.error})
 }
 
-export const signOut = (state, action) => INITIAL_STATE
 
 /* ------------- Hookup Reducers To Types ------------- */
 
 export const reducer = createReducer(INITIAL_STATE, {
-  [Types.SIGN_IN_REQUEST]: signInRequest,
-  [Types.SIGN_IN_SUCCESS]: signInSuccess,
-  [Types.SIGN_IN_FAILURE]: signInFailure,
-  [Types.SIGN_OUT]: signOut,
+  [Types.RETURN_BIKE_REQUEST]: returnBikeRequest,
+  [Types.RETURN_BIKE_SUCCESS]: returnBikeSuccess,
+  [Types.RETURN_BIKE_FAILURE]: returnBikeFailure,
 })

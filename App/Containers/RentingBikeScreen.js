@@ -6,6 +6,7 @@ import RentingBikeRedux from '../Redux/RentingBikeRedux'
 import { } from '../Redux/SignInRedux'
 import Loading from 'react-native-loading-spinner-overlay'
 import { lockSubcription } from '../Config/Global'
+import { resetScreen } from '../untils/navigation'
 
 class RentingBikeScreen extends Component {
 
@@ -66,7 +67,7 @@ class RentingBikeScreen extends Component {
                     'Renting Successfully. Do you want to rent another bike ?',
                     [
                         { text: 'Yes, sure', onPress: () => navigation.goBack() },
-                        { text: 'No', onPress: () => navigation.navigate('RentingBikeSuccessfullyScreen') },
+                        { text: 'No', onPress: () => navigation.dispatch(resetScreen('RentingBikeSuccessfullyScreen'))},
                     ],
                 );
             }

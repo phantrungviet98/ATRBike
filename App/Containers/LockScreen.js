@@ -7,6 +7,7 @@ import Header from '../Components/Header'
 import GettingStationRedux from '../Redux/GettingStationRedux'
 import SocketIOClient from 'socket.io-client'
 import {lockSubcription} from '../Config/Global'
+import {resetScreen} from '../untils/navigation'
 
 class LockScreen extends Component {
 

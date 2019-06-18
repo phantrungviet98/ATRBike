@@ -15,7 +15,7 @@ export default Creators
 
 export const INITIAL_STATE = Immutable({
   listLock: [],
-  isRequesting: false,
+  status: 'deactivated',
   error: null
 
 })
@@ -24,17 +24,17 @@ export const INITIAL_STATE = Immutable({
 
 export const gettingLockRequest = (state, action) => {
   console.log('gettingLock', INITIAL_STATE)
-  return state.merge({isRequesting: true})
+  return state.merge({status: 'activated'})
 }
 
 export const gettingLockSuccess = (state, action) => {
   console.log('gettingLockSuccess', action)
-  return state.merge({isRequesting: false, listStation: action.response.listStation})
+  return state.merge({status: 'finished', listStation: action.response.listStation})
 }
 
 export const gettingLockFailure = (state, action) => {
   console.log('gettingLockFailure', action)
-  return state.merge({isRequesting: false, error: action.error, token: null, user: {}})
+  return state.merge({status: 'finished', error: action.error, token: null, user: {}})
 }
 
 /* ------------- Hookup Reducers To Types ------------- */

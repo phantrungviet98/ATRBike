@@ -11,6 +11,8 @@ import NetInfo from '@react-native-community/netinfo'
 import LockRentingFlatListItem from '../Components/LockRentingFlatListItem'
 import Drawer from 'react-native-drawer-menu'
 import drawerContent from '../Components/Drawer'
+import ReturnBikeRedux from '../Redux/ReturnBikeRedux'
+import {resetScreen} from '../untils/navigation'
 
 class RentingBikeSuccessfullyScreen extends Component {
 
@@ -24,6 +26,7 @@ class RentingBikeSuccessfullyScreen extends Component {
       payment: 0
     }
     this.durationInterval
+    this.checkReturnPressed = false
   }
 
   static navigationOptions = {
@@ -46,20 +49,38 @@ class RentingBikeSuccessfullyScreen extends Component {
     }
   }
 
-  returnBike = (id, stationID) => {
-
+  returnBike = (lockId, endAtStationId) => {
+    this.checkReturnPressed = true
+    this.props.returnBike(this.props.token, {lockId, endAtStationId})
   }
 
   componentWillMount() {
   }
 
   componentDidMount() {
-    this.props.locksRentingRequest(this.props.token)
+    this.props.token ? this.props.locksRentingRequest(this.props.token) : alert('error token null')
+
   }
 
   componentWillReceiveProps(nextProps) {
-  }
+    console.log('nextProps Rsdfdfsdf', nextProps)
+    console.log('this.checkReturn', this.checkReturnPressed)
+    console.log('lockSr', this.props.locksRentingList)
+    
+    if(nextProps.locksRentingList.length == 0 && nextProps.locksRentingStatus === 'finished'){
+      console.log('sdsfdsf')
+      nextProps.navigation.dispatch(resetScreen('StationScreen'))
+    }
 
+    if(this.checkReturnPressed && nextProps.returnBikeStatus === 'finished' && nextProps.returnBikeError === null){
+      alert(`Payment: ${nextProps.amount} EUR`)
+      this.checkReturnPressed = false
+      this.props.locksRentingRequest(this.props.token)
+    }
+    if(nextProps.returnBikeError !== null) {
+      alert(`Error: ${nextProps.returnBikeError}`)
+    }
+  }
 
   setRentedDurationInterval = (createdAt) => {
     clearInterval(this.durationInterval)
@@ -102,24 +123,23 @@ class RentingBikeSuccessfullyScreen extends Component {
       main: {} // style of main board
     };
 
-
     return (
       <Drawer  drawerWidth={300}
-      drawerContent={drawerContent}
+      drawerContent={drawerContent('[lkjjkl')}
       type={Drawer.types.Overlay}
       onDrawerOpen={() => {console.log('Drawer is opened');}}
       onDrawerClose={() => {console.log('Drawer is closed')}}
       easingFunc={Easing.ease}>
         <View style={{ flex: 1 }}>
         <Header title='Renting Bike Successfully List' goBack={() => this.props.navigation.goBack()} />
-        <Loading visible={this.state.isLoading} textContent={'Loading...'} />
+        <Loading visible={this.props.isLocksRentingRequesting} textContent={'Loadingsadfds...'} />
         <View style={styles.TimeContainer}>
           <Text style={styles.TimeText}> {(this.state.duration.hour !== -1 && this.state.duration.hours !== -1) ? rentingDuration : 'Wellcome!!. Choose any lock to see information'} </Text>
           <Text style={styles.TimeText}> {(this.state.duration.hour !== -1 && this.state.duration.hours !== -1) ? rentingPayment : ''}</Text>
         </View>
         <FlatList
           data={this.props.locksRentingList}
-          renderItem={({ item }) => <LockRentingFlatListItem item={item} setRentedDuration={this.setRentedDurationInterval}/>
+          renderItem={({ item }) => <LockRentingFlatListItem item={item} setRentedDuration={this.setRentedDurationInterval} returnBike={this.returnBike}/>
           }
           keyExtractor={(item, index) => index.toString()} />
       </View>
@@ -158,13 +178,19 @@ const styles = StyleSheet.create({
 const mapStateToProps = (state) => {
   return {
     token: state.signIn.token,
-    locksRentingList: state.locksRenting.locksRentingList
+    locksRentingStatus: state.locksRenting.status,
+    locksRentingList: state.locksRenting.locksRentingList,
+    duration: state.returnBike.duration,
+    amount: state.returnBike.amount,
+    returnBikeStatus: state.returnBike.status,
+    returnBikeError: state.returnBike.error
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    locksRentingRequest: (token) => dispatch(LocksRentingRedux.locksRentingRequest(token))
+    locksRentingRequest: (token) => dispatch(LocksRentingRedux.locksRentingRequest(token)),
+    returnBike: (token, contentReturnBikeRequest) => dispatch(ReturnBikeRedux.returnBikeRequest(token, contentReturnBikeRequest))
   }
 }
 

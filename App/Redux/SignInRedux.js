@@ -16,9 +16,9 @@ export default Creators
 /* ------------- Initial State ------------- */
 
 export const INITIAL_STATE = Immutable({
-  token: null,
+  token: '',
   user: {},
-  isRequesting: false,
+  status: 'deactived',
   error: null
 
 })
@@ -27,17 +27,17 @@ export const INITIAL_STATE = Immutable({
 
 export const signInRequest = (state, action) => {
   console.log('signInRequest', INITIAL_STATE)
-  return state.merge({isRequesting: true})
+  return state.merge({status: 'activated'})
 }
 
 export const signInSuccess = (state, action) => {
   console.log('signSuccess', action)
-  return state.merge({isRequesting: false, token: action.response.token, user: action.response.user, error: null})
+  return state.merge({status: 'finished', token: action.response.token, user: action.response.user, error: null})
 }
 
 export const signInFailure = (state, action) => {
   console.log('signFailure', action)
-  return state.merge({isRequesting: false, error: action.error, token: null, user: {}})
+  return state.merge({isRequesting: 'finished', error: action.error, token: '', user: {}})
 }
 
 export const signOut = (state, action) => INITIAL_STATE

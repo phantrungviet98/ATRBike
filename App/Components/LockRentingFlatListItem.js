@@ -22,7 +22,7 @@ class LockRentingFlatListItem extends Component {
             <Text>Serial: {this.props.item.lock.serial}</Text>
             <Text style={{ color: 'green' }}>RENTING</Text>
           </View>
-          <TouchableOpacity style={LockRentingFlatListItemStyles.returnButton}><Text>Return</Text></TouchableOpacity>
+          <TouchableOpacity style={LockRentingFlatListItemStyles.returnButton} onPress={() => this.props.returnBike(this.props.item.lock._id, this.props.item.startAt)}><Text>Return</Text></TouchableOpacity>
         </View>
         <View style={{ height: 1, backgroundColor: 'white', }}></View>
       </TouchableOpacity>

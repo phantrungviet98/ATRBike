@@ -15,7 +15,7 @@ export default Creators
 
 export const INITIAL_STATE = Immutable({
   listStation: [],
-  isRequesting: false,
+  status: 'deactivated',
   error: null
 })
 
@@ -23,17 +23,17 @@ export const INITIAL_STATE = Immutable({
 
 export const gettingStationRequest = (state, action) => {
   console.log('gettingStation', INITIAL_STATE)
-  return state.merge({ isRequesting: true })
+  return state.merge({ status: 'activated' })
 }
 
 export const gettingStationSuccess = (state, action) => {
   console.log('gettingStationSuccess', action)
-  return state.merge({ isRequesting: false, listStation: action.response.listStation })
+  return state.merge({ status: 'finished', listStation: action.response.listStation, error: null })
 }
 
 export const gettingStationFailure = (state, action) => {
-  console.log('gettingStationSuccess', action)
-  return state.merge({ isRequesting: false, error: action.error, token: null, user: {} })
+  console.log('gettingStationFailure', action)
+  return state.merge({ status: 'finished', error: action.error, token: null, user: {} })
 }
 
 /* ------------- Hookup Reducers To Types ------------- */

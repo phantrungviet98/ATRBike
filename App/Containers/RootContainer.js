@@ -7,6 +7,8 @@ import StartupActions from '../Redux/StartupRedux'
 import ReduxPersist from '../Config/ReduxPersist'
 import GettingStationRedux from '../Redux/GettingStationRedux'
 import SocketIOClient from 'socket.io-client'
+import AppNavigation from '../Navigation/AppNavigation'
+import {setTopLevelNavigator} from '../untils/navigation'
 
 // Styles
 import styles from './Styles/RootContainerStyles'
@@ -47,7 +49,7 @@ class RootContainer extends Component {
     return (
       <View style={styles.applicationView}>
         <StatusBar barStyle='light-content' />
-        <ReduxNavigation />
+        <AppNavigation refs={ref => setTopLevelNavigator(ref)}/>
       </View>
     )
   }
