@@ -1,4 +1,4 @@
-#Wed Jun 12 14:16:40 ICT 2019
-base.0=C\:\\Users\\PTV\\Documents\\ATRBike\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+#Sun Jun 30 12:55:50 ICT 2019
+base.0=/home/ptv/Documents/ATRBike/android/app/build/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex

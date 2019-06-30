@@ -26,7 +26,7 @@ export const pingEpic = action$ => action$.pipe(
       }),
       catchError(error => {
         return of(
-            PingRedux.pingSuccess(error.response)
+            PingRedux.pingFailure(error.response)
         )
       })
     )

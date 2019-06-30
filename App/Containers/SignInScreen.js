@@ -130,7 +130,7 @@ class SignInScreen extends Component {
         source={{ uri: 'https://ant-tech.eu/wp-content/uploads/2017/06/logo-text.png' }}
         style={{ width: '100%', height: '100%' }}>
         <Header title='Sign In' />
-        <Loading visible={(this.props.isSignInRequesting || this.props.isLocksRentingRequesting) } textContent={'Loading...'} />
+        <Loading visible={(this.props.signInStatus === 'activated' || this.props.locksRentingStatus === 'activated') ? true : false } textContent={'Loading...'} />
         <View style={{ flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center', margin: 10 }}>
           <TouchableOpacity onPress={() => this.props.navigation.navigate('SignUpScreen', { setRegisteredUser: this.getRegisteredUser })}>
             <View style={styles.signUpButton}>

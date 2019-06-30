@@ -28,8 +28,8 @@ export const pingRequest = (state, action) => {
 }
 
 export const pingSuccess = (state, action) => {
-  console.log('pingSuccess', action)
-  return state.merge({status: 'finished', value: action.response.value, error: null})
+  
+  return state.merge({status: 'finished', value: action.response && action.response.value, error: null})
 }
 
 export const pingFailure = (state, action) => {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
+import ItemLockFlatListStyles from './Styles/ItemLockFlatListStyles';
 
 class ItemLockFlatList extends Component {
 
@@ -13,9 +14,9 @@ class ItemLockFlatList extends Component {
   render() {
     return (
       <TouchableOpacity 
-      onPress={() => this.props.goToRentingScreen(this.props.item)}
+      onPress={() => this.props.onPressLock(this.props.item)}
       >
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'lightblue', padding: 10, }}>
+        <View style={ItemLockFlatListStyles.item}>
           <View>
             <Text>Name: {this.props.item.name}</Text>
             <Text>Serial: {this.props.item.serial}</Text>
@@ -25,7 +26,7 @@ class ItemLockFlatList extends Component {
             width: 10, height: 10, borderRadius: 5,
           }}></View>
         </View>
-        <View style={{ height: 1, backgroundColor: 'blue', }}></View>
+        <View style={{ height: 1, backgroundColor: 'white', }}></View>
       </TouchableOpacity>
     )
   }

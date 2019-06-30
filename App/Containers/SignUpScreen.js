@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { StyleSheet, TextInput, Text, View, TouchableOpacity, ImageBackground, Picker } from 'react-native';
+import { StyleSheet, TextInput, Text, View, TouchableOpacity, ImageBackground, Picker, AsyncStorage } from 'react-native';
 import { connect } from 'react-redux'
 import Header from '../Components/Header'
 import SignUpRedux from '../Redux/SignUpRedux'
 import SignUpScreenStyles from './Styles/SignUpScreenStyles'
-import Requesting from 'react-native-loading-spinner-overlay'
+import Loading from 'react-native-loading-spinner-overlay'
 
 
 class SignUpScreen extends Component {
@@ -28,14 +28,22 @@ class SignUpScreen extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { navigation } = this.props
     if (this.state.buttonPressed == true) {
       if (nextProps.error !== null) {
-        alert(nextProps.error.message)
+        alert(JSON.stringify(nextProps.error.message))
       }
       else {
-        navigation.navigate('StationScreen')
+        this.storeToken(nextProps.token)
+        nextProps.navigation.navigate('AddCardScreen')
       }
+    }
+  }
+
+  storeToken = async (token) => {
+    try {
+      await AsyncStorage.setItem('token', token)
+    } catch (error) {
+      console.log('storeToken Error: ', error)
     }
   }
 
@@ -44,7 +52,7 @@ class SignUpScreen extends Component {
     return (
       <View style={SignUpScreenStyles.container}>
       <Header title='Sign Up' goBack={this.props.navigation.goBack} />
-      <Requesting visible={this.props.isRequesting} textContent={'Loading...'} />
+      <Loading visible={this.props.signUpStatus === 'activated' ? true : false} textContent={'Loading...'} />
       <View style={{ flex: 1, justifyContent: 'flex-end', alignItems: 'center', margin: 10 }}>
         <Text style={SignUpScreenStyles.wellcomeText}>Join Us</Text>
         <TextInput
@@ -87,9 +95,9 @@ class SignUpScreen extends Component {
           style={{ marginTop: 10 }}
           onPress={() => {
             this.props.signUp({
-              "username": "lydfsasedddfdferersdfjhgd",
-              "email": "lynkxysdhdsdeffgzdfassehrg@gmail.com",
-              "phoneNumber": 912352822,
+              "username": "hasddsfgssdydsfsdfsdfdfjhgd",
+              "email": "lsdfjdfuyjsdfsdfhrg@gmail.com",
+              "phoneNumber": 911892243,
               "countryCode": 84,
               "profile": {
                 "firstName": "Viet",
@@ -101,7 +109,7 @@ class SignUpScreen extends Component {
             this.setState({ buttonPressed: true })
           }}>
           <View style={SignUpScreenStyles.signUpButton}>
-            <Text style={SignUpScreenStyles.signUpText}>Sign Up</Text>
+            <Text style={SignUpScreenStyles.signUpText}>Next</Text>
           </View>
         </TouchableOpacity>
       </View>
@@ -114,7 +122,7 @@ const mapStateToProps = (state) => {
   return {
     token: state.signUp.token,
     user: state.signUp.user,
-    isRequesting: state.signUp.isRequesting,
+    signUpStatus: state.signUp.status,
     error: state.signUp.error
   }
 }

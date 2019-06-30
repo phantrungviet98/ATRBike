@@ -1,224 +1,330 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:1:1-26:12
-INJECTED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:1:1-26:12
-INJECTED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:1:1-26:12
-INJECTED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:1:1-26:12
-MERGED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:1:1-26:12
-MERGED from [:@react-native-community_netinfo] C:\Users\PTV\Documents\ATRBike\node_modules\@react-native-community\netinfo\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
-MERGED from [:react-native-i18n] C:\Users\PTV\Documents\ATRBike\node_modules\react-native-i18n\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
-MERGED from [:react-native-gesture-handler] C:\Users\PTV\Documents\ATRBike\node_modules\react-native-gesture-handler\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
-MERGED from [com.facebook.react:react-native:0.59.3] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\react-native-0.59.3.aar\5d5b45f552011b3a7e0182bcf8cc60e9\AndroidManifest.xml:2:1-13:12
-MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\8d16db193c6feeac42b378f027ead1fc\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\5ec1517df06b9354610dce387fcdda78\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\d7621bbf0a7a298eb7584d9356a19e99\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\c62f4649d2fcdcbc0cfeaadf8e79bc50\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\650203b2887f852eded7cab04f071799\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\910a3e8851598baa917adee9991d46c4\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:loader:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\96a0acfae180b69d8c77989548c8e067\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:viewpager:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\bfe953f0d4649833bf6b1c05de7b37f8\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\2b4a877556c9b6f95c51ed6dfaa35389\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\be248795e0dbdc3b36c34ca2dd216562\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\6558f458ed1abe0c4604d8b5ef10c08b\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:customview:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\30c426f010f6fabfe9d87c90c171b982\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\8012ed37a457ee838d9b6aad64a6f02c\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\d936affcd773c2028e10b15cd46b72ec\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\c04a6c8e6e2f9e1b5fe67c0c397236e5\AndroidManifest.xml:17:1-24:12
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\b64317d9739402e117b01ea0c4ad2395\AndroidManifest.xml:17:1-25:12
-MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\35a652ef529dbb5bcd5006aa526793c5\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\91526d0d5146bc88a36b96ffa96d2c85\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:documentfile:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\4e83fb06cec64e21c27871a958d81418\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\e74beddf07b1a112a2fd0688850e842e\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:print:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\0fc12e59630e708b6b814f3462c4761b\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\de3a06e5bdc1a992902101b36b7cebf0\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\c06b02cc2dcff1ec7c3f1f1216e29ed6\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\29b665205c208767ebc8b6b327b1e2b9\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.core:runtime:1.1.1] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\472a06bfbee9efddee957bb5b834d6d7\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:interpolator:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\ddb19f71c4d86e2a52d14c5a1012c37a\AndroidManifest.xml:17:1-22:12
-MERGED from [com.facebook.fresco:fresco:1.10.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\fresco-1.10.0.aar\5dda35dae3cd4e2e55a4bbe9d2243be8\AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\imagepipeline-okhttp3-1.10.0.aar\b6cf842701965f306fb63f6fb9e63b42\AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.fresco:drawee:1.10.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\drawee-1.10.0.aar\c3267f6db614f9f446aac23b9e7e080c\AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.fresco:imagepipeline:1.10.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.10.0.aar\2a16525131193565a465a63909740c5f\AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.10.0.aar\19d2fcded84300d38286a919a3cb8311\AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.soloader:soloader:0.6.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\soloader-0.6.0.aar\bba5772e9a456df2473c3ec2b3984e17\AndroidManifest.xml:2:1-13:12
-MERGED from [com.facebook.fresco:fbcore:1.10.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\fbcore-1.10.0.aar\639414771a82db9ecf8c9b4ed0af0d85\AndroidManifest.xml:2:1-9:12
-INJECTED from C:\Users\PTV\Documents\ATRBike\android\app\src\debug\AndroidManifest.xml:2:1-8:12
-INJECTED from C:\Users\PTV\Documents\ATRBike\android\app\src\debug\AndroidManifest.xml:2:1-8:12
-INJECTED from C:\Users\PTV\Documents\ATRBike\android\app\src\debug\AndroidManifest.xml:2:1-8:12
+ADDED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:1:1-30:12
+INJECTED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:1:1-30:12
+INJECTED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:1:1-30:12
+INJECTED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:1:1-30:12
+MERGED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:1:1-30:12
+MERGED from [:lottie-react-native] /home/ptv/Documents/ATRBike/node_modules/lottie-react-native/src/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-maps] /home/ptv/Documents/ATRBike/node_modules/react-native-maps/lib/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-12:12
+MERGED from [:@react-native-community_netinfo] /home/ptv/Documents/ATRBike/node_modules/@react-native-community/netinfo/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-i18n] /home/ptv/Documents/ATRBike/node_modules/react-native-i18n/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-gesture-handler] /home/ptv/Documents/ATRBike/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [com.facebook.react:react-native:0.59.3] /home/ptv/.gradle/caches/transforms-1/files-1.1/react-native-0.59.3.aar/858742471534e4f8bdea5032107e0881/AndroidManifest.xml:2:1-13:12
+MERGED from [com.airbnb.android:lottie:2.5.6] /home/ptv/.gradle/caches/transforms-1/files-1.1/lottie-2.5.6.aar/877f30e9ff356e1573e542bf4955ee82/AndroidManifest.xml:2:1-13:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/584a88dbfbca4d73e6cc8fdb8ce1f338/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services-maps:16.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/play-services-maps-16.1.0.aar/3ffd7f945c231bc95d23d68b0ee11b18/AndroidManifest.xml:17:1-38:12
+MERGED from [com.google.android.gms:play-services-base:16.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/play-services-base-16.1.0.aar/a6b71dbd28066854c85024b4b9c6485d/AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.maps.android:android-maps-utils:0.5] /home/ptv/.gradle/caches/transforms-1/files-1.1/android-maps-utils-0.5.aar/e2187c657f687e24f65dcdd6f1a09d4f/AndroidManifest.xml:2:1-13:12
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /home/ptv/.gradle/caches/transforms-1/files-1.1/play-services-tasks-16.0.1.aar/eedc200226856f5b2c8d628d00a8f88c/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:16.2.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.2.0.aar/1e28c738e7bbaa8c7e31a2ecf57510dc/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:26.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/cf39448dc58607281ff51aee70e8e463/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-fragment:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/c60a3a19dfeb13406722abc13e5bcb99/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/75330f4d7f44fbc5612c52a32f9d1739/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/c4bff31ccfb4e8eb31d5325cf31c118d/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/20817610280d3d2f6f8a2bb2c819311d/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/d198b7226f1d5e08a5657a76de352ce9/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/e462947328f134a2f480f7d28b22d161/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/44da54b71c8a97a58c0493786085e9b4/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/462e7f348e1cc940c70ff9815db6e4b7/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/ffba22daa575470059ab5cffc19656f9/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/a2737515ae97d998e8a33b6ff7bf175e/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/7a92beea7eb62994c5b507b4a7cee996/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/f8ebea5b19f6495bec3add5cecbffcbd/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/32677fccac088d0a3bad9afd0c6ccc80/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/0bbb11332b3645ac3c97108e0e24b7d6/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-compat:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/f16c5c92b3730a3aa6910a7b86b9af60/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/60bcca9001cae535c34ac7f1756b1828/AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:cursoradapter:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/2fa947160dead79f55fd1135f6f0feb2/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /home/ptv/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/c4f448ce7584dcef430f0bd7e0586c00/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/ab48f351e2d9f368511fb7c7f337ea1f/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/46216a00d50fb28c6aa0e0616d74744f/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/f1c5e141a5b0e2af96659602ce9502b0/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /home/ptv/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/f2aefb777b3312ece9dd65d85e74aa73/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /home/ptv/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/8e598ead5189faccb0b26ebde5660703/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /home/ptv/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/fa8c85fd205a6a008ff1ed051c69c760/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] /home/ptv/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/979a20adf5fc527fdbd3a2f2ab310a1d/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/9680430f9a6a8c6fcfb49ef67b8c416d/AndroidManifest.xml:17:1-22:12
+MERGED from [com.facebook.fresco:fresco:1.10.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/fresco-1.10.0.aar/4ee18051ab29ccedfa61483e522e00d5/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.10.0.aar/2230f969a929be23fac1872a92116a90/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:drawee:1.10.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/drawee-1.10.0.aar/ddf5ab0f19c5e46387cdef0aae994b69/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline:1.10.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/imagepipeline-1.10.0.aar/10b81a6a394b7c9c17ca4eadf583c517/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/imagepipeline-base-1.10.0.aar/54b2488fa3dedbf7dde960d933fa5d93/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.soloader:soloader:0.6.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/soloader-0.6.0.aar/2df10f8a5f5cb03a64566c1e1ab253f0/AndroidManifest.xml:2:1-13:12
+MERGED from [com.facebook.fresco:fbcore:1.10.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/fbcore-1.10.0.aar/306880ad828f6ad923c6f28cf50a3ec9/AndroidManifest.xml:2:1-9:12
+INJECTED from /home/ptv/Documents/ATRBike/android/app/src/debug/AndroidManifest.xml:2:1-8:12
+INJECTED from /home/ptv/Documents/ATRBike/android/app/src/debug/AndroidManifest.xml:2:1-8:12
+INJECTED from /home/ptv/Documents/ATRBike/android/app/src/debug/AndroidManifest.xml:2:1-8:12
 	package
-		ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:2:3-26
-		INJECTED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:2:3-26
-		INJECTED from C:\Users\PTV\Documents\ATRBike\android\app\src\debug\AndroidManifest.xml
+		ADDED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:2:3-26
+		INJECTED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:2:3-26
+		INJECTED from /home/ptv/Documents/ATRBike/android/app/src/debug/AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:1:1-26:12
-		INJECTED from C:\Users\PTV\Documents\ATRBike\android\app\src\debug\AndroidManifest.xml
+		INJECTED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:1:1-30:12
+		INJECTED from /home/ptv/Documents/ATRBike/android/app/src/debug/AndroidManifest.xml
 	xmlns:tools
-		ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\debug\AndroidManifest.xml:3:5-51
+		ADDED from /home/ptv/Documents/ATRBike/android/app/src/debug/AndroidManifest.xml:3:5-51
 	android:versionCode
-		INJECTED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:1:1-26:12
-		INJECTED from C:\Users\PTV\Documents\ATRBike\android\app\src\debug\AndroidManifest.xml
+		INJECTED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:1:1-30:12
+		INJECTED from /home/ptv/Documents/ATRBike/android/app/src/debug/AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:1:11-69
+		ADDED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:1:11-69
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:4:5-67
+ADDED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:4:5-67
+MERGED from [:lottie-react-native] /home/ptv/Documents/ATRBike/node_modules/lottie-react-native/src/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-67
+MERGED from [:lottie-react-native] /home/ptv/Documents/ATRBike/node_modules/lottie-react-native/src/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-67
+MERGED from [:react-native-maps] /home/ptv/Documents/ATRBike/node_modules/react-native-maps/lib/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-67
+MERGED from [:react-native-maps] /home/ptv/Documents/ATRBike/node_modules/react-native-maps/lib/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-67
+MERGED from [com.google.android.gms:play-services-maps:16.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/play-services-maps-16.1.0.aar/3ffd7f945c231bc95d23d68b0ee11b18/AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-maps:16.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/play-services-maps-16.1.0.aar/3ffd7f945c231bc95d23d68b0ee11b18/AndroidManifest.xml:24:5-67
 	android:name
-		ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:4:22-64
+		ADDED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:4:22-64
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:5:5-79
+	android:name
+		ADDED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:5:22-76
 application
-ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:6:5-24:19
-MERGED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:6:5-24:19
-MERGED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:6:5-24:19
-MERGED from [com.facebook.react:react-native:0.59.3] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\react-native-0.59.3.aar\5d5b45f552011b3a7e0182bcf8cc60e9\AndroidManifest.xml:11:5-20
-MERGED from [com.facebook.react:react-native:0.59.3] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\react-native-0.59.3.aar\5d5b45f552011b3a7e0182bcf8cc60e9\AndroidManifest.xml:11:5-20
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\c04a6c8e6e2f9e1b5fe67c0c397236e5\AndroidManifest.xml:22:5-94
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\c04a6c8e6e2f9e1b5fe67c0c397236e5\AndroidManifest.xml:22:5-94
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\b64317d9739402e117b01ea0c4ad2395\AndroidManifest.xml:22:5-23:19
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\b64317d9739402e117b01ea0c4ad2395\AndroidManifest.xml:22:5-23:19
-MERGED from [com.facebook.soloader:soloader:0.6.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\soloader-0.6.0.aar\bba5772e9a456df2473c3ec2b3984e17\AndroidManifest.xml:11:5-20
-MERGED from [com.facebook.soloader:soloader:0.6.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\soloader-0.6.0.aar\bba5772e9a456df2473c3ec2b3984e17\AndroidManifest.xml:11:5-20
+ADDED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:7:5-28:19
+MERGED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:7:5-28:19
+MERGED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:7:5-28:19
+MERGED from [com.facebook.react:react-native:0.59.3] /home/ptv/.gradle/caches/transforms-1/files-1.1/react-native-0.59.3.aar/858742471534e4f8bdea5032107e0881/AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.react:react-native:0.59.3] /home/ptv/.gradle/caches/transforms-1/files-1.1/react-native-0.59.3.aar/858742471534e4f8bdea5032107e0881/AndroidManifest.xml:11:5-20
+MERGED from [com.airbnb.android:lottie:2.5.6] /home/ptv/.gradle/caches/transforms-1/files-1.1/lottie-2.5.6.aar/877f30e9ff356e1573e542bf4955ee82/AndroidManifest.xml:11:5-20
+MERGED from [com.airbnb.android:lottie:2.5.6] /home/ptv/.gradle/caches/transforms-1/files-1.1/lottie-2.5.6.aar/877f30e9ff356e1573e542bf4955ee82/AndroidManifest.xml:11:5-20
+MERGED from [com.google.android.gms:play-services-maps:16.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/play-services-maps-16.1.0.aar/3ffd7f945c231bc95d23d68b0ee11b18/AndroidManifest.xml:30:5-36:19
+MERGED from [com.google.android.gms:play-services-maps:16.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/play-services-maps-16.1.0.aar/3ffd7f945c231bc95d23d68b0ee11b18/AndroidManifest.xml:30:5-36:19
+MERGED from [com.google.android.gms:play-services-base:16.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/play-services-base-16.1.0.aar/a6b71dbd28066854c85024b4b9c6485d/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:16.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/play-services-base-16.1.0.aar/a6b71dbd28066854c85024b4b9c6485d/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.maps.android:android-maps-utils:0.5] /home/ptv/.gradle/caches/transforms-1/files-1.1/android-maps-utils-0.5.aar/e2187c657f687e24f65dcdd6f1a09d4f/AndroidManifest.xml:7:5-11:19
+MERGED from [com.google.maps.android:android-maps-utils:0.5] /home/ptv/.gradle/caches/transforms-1/files-1.1/android-maps-utils-0.5.aar/e2187c657f687e24f65dcdd6f1a09d4f/AndroidManifest.xml:7:5-11:19
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /home/ptv/.gradle/caches/transforms-1/files-1.1/play-services-tasks-16.0.1.aar/eedc200226856f5b2c8d628d00a8f88c/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /home/ptv/.gradle/caches/transforms-1/files-1.1/play-services-tasks-16.0.1.aar/eedc200226856f5b2c8d628d00a8f88c/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:16.2.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.2.0.aar/1e28c738e7bbaa8c7e31a2ecf57510dc/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:16.2.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.2.0.aar/1e28c738e7bbaa8c7e31a2ecf57510dc/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-v4:26.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/cf39448dc58607281ff51aee70e8e463/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-v4:26.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/cf39448dc58607281ff51aee70e8e463/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/0bbb11332b3645ac3c97108e0e24b7d6/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/0bbb11332b3645ac3c97108e0e24b7d6/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/f16c5c92b3730a3aa6910a7b86b9af60/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/f16c5c92b3730a3aa6910a7b86b9af60/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/60bcca9001cae535c34ac7f1756b1828/AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/60bcca9001cae535c34ac7f1756b1828/AndroidManifest.xml:22:5-23:19
+MERGED from [com.facebook.soloader:soloader:0.6.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/soloader-0.6.0.aar/2df10f8a5f5cb03a64566c1e1ab253f0/AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.soloader:soloader:0.6.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/soloader-0.6.0.aar/2df10f8a5f5cb03a64566c1e1ab253f0/AndroidManifest.xml:11:5-20
 	android:appComponentFactory
-		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\c04a6c8e6e2f9e1b5fe67c0c397236e5\AndroidManifest.xml:22:18-91
+		ADDED from [com.android.support:support-compat:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/f16c5c92b3730a3aa6910a7b86b9af60/AndroidManifest.xml:22:18-91
 	android:label
-		ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:8:7-39
-		ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:8:7-39
+		ADDED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:9:7-39
+		ADDED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:9:7-39
 	tools:ignore
-		ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\debug\AndroidManifest.xml:7:75-114
+		ADDED from /home/ptv/Documents/ATRBike/android/app/src/debug/AndroidManifest.xml:7:75-114
 	android:roundIcon
-		ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:10:7-52
-		ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:10:7-52
+		ADDED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:11:7-52
+		ADDED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:11:7-52
 	tools:targetApi
-		ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\debug\AndroidManifest.xml:7:54-74
+		ADDED from /home/ptv/Documents/ATRBike/android/app/src/debug/AndroidManifest.xml:7:54-74
 	android:icon
-		ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:9:7-41
-		ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:9:7-41
+		ADDED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:10:7-41
+		ADDED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:10:7-41
 	android:allowBackup
-		ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:11:7-34
-		ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:11:7-34
+		ADDED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:12:7-34
+		ADDED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:12:7-34
 	android:theme
-		ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:12:7-38
-		ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:12:7-38
+		ADDED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:13:7-38
+		ADDED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:13:7-38
 	android:usesCleartextTraffic
-		ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\debug\AndroidManifest.xml:7:18-53
+		ADDED from /home/ptv/Documents/ATRBike/android/app/src/debug/AndroidManifest.xml:7:18-53
 	android:name
-		ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:7:7-38
-		ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:7:7-38
+		ADDED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:8:7-38
+		ADDED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:8:7-38
 activity#com.appignite.MainActivity
-ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:13:7-22:18
+ADDED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:14:7-23:18
 	android:label
-		ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:15:9-41
+		ADDED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:16:9-41
 	android:windowSoftInputMode
-		ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:17:9-51
+		ADDED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:18:9-51
 	android:configChanges
-		ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:16:9-79
+		ADDED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:17:9-79
 	android:name
-		ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:14:9-37
+		ADDED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:15:9-37
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:18:9-21:25
+ADDED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:19:9-22:25
 action#android.intent.action.MAIN
-ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:19:13-65
+ADDED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:20:13-65
 	android:name
-		ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:19:21-62
+		ADDED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:20:21-62
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:20:13-73
+ADDED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:21:13-73
 	android:name
-		ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:20:23-70
+		ADDED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:21:23-70
 activity#com.facebook.react.devsupport.DevSettingsActivity
-ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:23:7-84
+ADDED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:24:7-84
 	android:name
-		ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml:23:17-81
+		ADDED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:24:17-81
+meta-data#com.google.android.geo.API_KEY
+ADDED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:25:7-27:66
+	android:value
+		ADDED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:27:9-64
+	android:name
+		ADDED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml:26:9-54
 uses-sdk
-INJECTED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml
-MERGED from [:@react-native-community_netinfo] C:\Users\PTV\Documents\ATRBike\node_modules\@react-native-community\netinfo\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:@react-native-community_netinfo] C:\Users\PTV\Documents\ATRBike\node_modules\@react-native-community\netinfo\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-i18n] C:\Users\PTV\Documents\ATRBike\node_modules\react-native-i18n\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-i18n] C:\Users\PTV\Documents\ATRBike\node_modules\react-native-i18n\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-gesture-handler] C:\Users\PTV\Documents\ATRBike\node_modules\react-native-gesture-handler\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-gesture-handler] C:\Users\PTV\Documents\ATRBike\node_modules\react-native-gesture-handler\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [com.facebook.react:react-native:0.59.3] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\react-native-0.59.3.aar\5d5b45f552011b3a7e0182bcf8cc60e9\AndroidManifest.xml:7:5-9:41
-MERGED from [com.facebook.react:react-native:0.59.3] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\react-native-0.59.3.aar\5d5b45f552011b3a7e0182bcf8cc60e9\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\8d16db193c6feeac42b378f027ead1fc\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\8d16db193c6feeac42b378f027ead1fc\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\5ec1517df06b9354610dce387fcdda78\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\5ec1517df06b9354610dce387fcdda78\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\d7621bbf0a7a298eb7584d9356a19e99\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\d7621bbf0a7a298eb7584d9356a19e99\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\c62f4649d2fcdcbc0cfeaadf8e79bc50\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\c62f4649d2fcdcbc0cfeaadf8e79bc50\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\650203b2887f852eded7cab04f071799\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\650203b2887f852eded7cab04f071799\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\910a3e8851598baa917adee9991d46c4\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\910a3e8851598baa917adee9991d46c4\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:loader:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\96a0acfae180b69d8c77989548c8e067\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:loader:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\96a0acfae180b69d8c77989548c8e067\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:viewpager:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\bfe953f0d4649833bf6b1c05de7b37f8\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:viewpager:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\bfe953f0d4649833bf6b1c05de7b37f8\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\2b4a877556c9b6f95c51ed6dfaa35389\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\2b4a877556c9b6f95c51ed6dfaa35389\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\be248795e0dbdc3b36c34ca2dd216562\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\be248795e0dbdc3b36c34ca2dd216562\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\6558f458ed1abe0c4604d8b5ef10c08b\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\6558f458ed1abe0c4604d8b5ef10c08b\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:customview:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\30c426f010f6fabfe9d87c90c171b982\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:customview:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\30c426f010f6fabfe9d87c90c171b982\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\8012ed37a457ee838d9b6aad64a6f02c\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\8012ed37a457ee838d9b6aad64a6f02c\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\d936affcd773c2028e10b15cd46b72ec\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\d936affcd773c2028e10b15cd46b72ec\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\c04a6c8e6e2f9e1b5fe67c0c397236e5\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\c04a6c8e6e2f9e1b5fe67c0c397236e5\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\b64317d9739402e117b01ea0c4ad2395\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\b64317d9739402e117b01ea0c4ad2395\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\35a652ef529dbb5bcd5006aa526793c5\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\35a652ef529dbb5bcd5006aa526793c5\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\91526d0d5146bc88a36b96ffa96d2c85\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\91526d0d5146bc88a36b96ffa96d2c85\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:documentfile:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\4e83fb06cec64e21c27871a958d81418\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:documentfile:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\4e83fb06cec64e21c27871a958d81418\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\e74beddf07b1a112a2fd0688850e842e\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\e74beddf07b1a112a2fd0688850e842e\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:print:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\0fc12e59630e708b6b814f3462c4761b\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:print:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\0fc12e59630e708b6b814f3462c4761b\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\de3a06e5bdc1a992902101b36b7cebf0\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\de3a06e5bdc1a992902101b36b7cebf0\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\c06b02cc2dcff1ec7c3f1f1216e29ed6\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\c06b02cc2dcff1ec7c3f1f1216e29ed6\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\29b665205c208767ebc8b6b327b1e2b9\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\29b665205c208767ebc8b6b327b1e2b9\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.1] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\472a06bfbee9efddee957bb5b834d6d7\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.1] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\472a06bfbee9efddee957bb5b834d6d7\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:interpolator:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\ddb19f71c4d86e2a52d14c5a1012c37a\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:interpolator:28.0.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\ddb19f71c4d86e2a52d14c5a1012c37a\AndroidManifest.xml:20:5-44
-MERGED from [com.facebook.fresco:fresco:1.10.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\fresco-1.10.0.aar\5dda35dae3cd4e2e55a4bbe9d2243be8\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:fresco:1.10.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\fresco-1.10.0.aar\5dda35dae3cd4e2e55a4bbe9d2243be8\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\imagepipeline-okhttp3-1.10.0.aar\b6cf842701965f306fb63f6fb9e63b42\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\imagepipeline-okhttp3-1.10.0.aar\b6cf842701965f306fb63f6fb9e63b42\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:drawee:1.10.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\drawee-1.10.0.aar\c3267f6db614f9f446aac23b9e7e080c\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:drawee:1.10.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\drawee-1.10.0.aar\c3267f6db614f9f446aac23b9e7e080c\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline:1.10.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.10.0.aar\2a16525131193565a465a63909740c5f\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline:1.10.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.10.0.aar\2a16525131193565a465a63909740c5f\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.10.0.aar\19d2fcded84300d38286a919a3cb8311\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.10.0.aar\19d2fcded84300d38286a919a3cb8311\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.soloader:soloader:0.6.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\soloader-0.6.0.aar\bba5772e9a456df2473c3ec2b3984e17\AndroidManifest.xml:7:5-9:41
-MERGED from [com.facebook.soloader:soloader:0.6.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\soloader-0.6.0.aar\bba5772e9a456df2473c3ec2b3984e17\AndroidManifest.xml:7:5-9:41
-MERGED from [com.facebook.fresco:fbcore:1.10.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\fbcore-1.10.0.aar\639414771a82db9ecf8c9b4ed0af0d85\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:fbcore:1.10.0] C:\Users\PTV\.gradle\caches\transforms-1\files-1.1\fbcore-1.10.0.aar\639414771a82db9ecf8c9b4ed0af0d85\AndroidManifest.xml:5:5-7:41
-INJECTED from C:\Users\PTV\Documents\ATRBike\android\app\src\debug\AndroidManifest.xml
-INJECTED from C:\Users\PTV\Documents\ATRBike\android\app\src\debug\AndroidManifest.xml
+INJECTED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml
+INJECTED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml
+MERGED from [:lottie-react-native] /home/ptv/Documents/ATRBike/node_modules/lottie-react-native/src/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:lottie-react-native] /home/ptv/Documents/ATRBike/node_modules/lottie-react-native/src/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-maps] /home/ptv/Documents/ATRBike/node_modules/react-native-maps/lib/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-maps] /home/ptv/Documents/ATRBike/node_modules/react-native-maps/lib/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:@react-native-community_netinfo] /home/ptv/Documents/ATRBike/node_modules/@react-native-community/netinfo/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:@react-native-community_netinfo] /home/ptv/Documents/ATRBike/node_modules/@react-native-community/netinfo/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-i18n] /home/ptv/Documents/ATRBike/node_modules/react-native-i18n/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-i18n] /home/ptv/Documents/ATRBike/node_modules/react-native-i18n/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-gesture-handler] /home/ptv/Documents/ATRBike/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-gesture-handler] /home/ptv/Documents/ATRBike/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.59.3] /home/ptv/.gradle/caches/transforms-1/files-1.1/react-native-0.59.3.aar/858742471534e4f8bdea5032107e0881/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.59.3] /home/ptv/.gradle/caches/transforms-1/files-1.1/react-native-0.59.3.aar/858742471534e4f8bdea5032107e0881/AndroidManifest.xml:7:5-9:41
+MERGED from [com.airbnb.android:lottie:2.5.6] /home/ptv/.gradle/caches/transforms-1/files-1.1/lottie-2.5.6.aar/877f30e9ff356e1573e542bf4955ee82/AndroidManifest.xml:7:5-9:41
+MERGED from [com.airbnb.android:lottie:2.5.6] /home/ptv/.gradle/caches/transforms-1/files-1.1/lottie-2.5.6.aar/877f30e9ff356e1573e542bf4955ee82/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/584a88dbfbca4d73e6cc8fdb8ce1f338/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/584a88dbfbca4d73e6cc8fdb8ce1f338/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:16.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/play-services-maps-16.1.0.aar/3ffd7f945c231bc95d23d68b0ee11b18/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:16.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/play-services-maps-16.1.0.aar/3ffd7f945c231bc95d23d68b0ee11b18/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:16.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/play-services-base-16.1.0.aar/a6b71dbd28066854c85024b4b9c6485d/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:16.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/play-services-base-16.1.0.aar/a6b71dbd28066854c85024b4b9c6485d/AndroidManifest.xml:20:5-44
+MERGED from [com.google.maps.android:android-maps-utils:0.5] /home/ptv/.gradle/caches/transforms-1/files-1.1/android-maps-utils-0.5.aar/e2187c657f687e24f65dcdd6f1a09d4f/AndroidManifest.xml:5:5-43
+MERGED from [com.google.maps.android:android-maps-utils:0.5] /home/ptv/.gradle/caches/transforms-1/files-1.1/android-maps-utils-0.5.aar/e2187c657f687e24f65dcdd6f1a09d4f/AndroidManifest.xml:5:5-43
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /home/ptv/.gradle/caches/transforms-1/files-1.1/play-services-tasks-16.0.1.aar/eedc200226856f5b2c8d628d00a8f88c/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /home/ptv/.gradle/caches/transforms-1/files-1.1/play-services-tasks-16.0.1.aar/eedc200226856f5b2c8d628d00a8f88c/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:16.2.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.2.0.aar/1e28c738e7bbaa8c7e31a2ecf57510dc/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:16.2.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.2.0.aar/1e28c738e7bbaa8c7e31a2ecf57510dc/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:26.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/cf39448dc58607281ff51aee70e8e463/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:26.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/cf39448dc58607281ff51aee70e8e463/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/c60a3a19dfeb13406722abc13e5bcb99/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/c60a3a19dfeb13406722abc13e5bcb99/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/75330f4d7f44fbc5612c52a32f9d1739/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/75330f4d7f44fbc5612c52a32f9d1739/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/c4bff31ccfb4e8eb31d5325cf31c118d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/c4bff31ccfb4e8eb31d5325cf31c118d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/20817610280d3d2f6f8a2bb2c819311d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/20817610280d3d2f6f8a2bb2c819311d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/d198b7226f1d5e08a5657a76de352ce9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/d198b7226f1d5e08a5657a76de352ce9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/e462947328f134a2f480f7d28b22d161/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/e462947328f134a2f480f7d28b22d161/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/44da54b71c8a97a58c0493786085e9b4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/44da54b71c8a97a58c0493786085e9b4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/462e7f348e1cc940c70ff9815db6e4b7/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/462e7f348e1cc940c70ff9815db6e4b7/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/ffba22daa575470059ab5cffc19656f9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/ffba22daa575470059ab5cffc19656f9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/a2737515ae97d998e8a33b6ff7bf175e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/a2737515ae97d998e8a33b6ff7bf175e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/7a92beea7eb62994c5b507b4a7cee996/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/7a92beea7eb62994c5b507b4a7cee996/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/f8ebea5b19f6495bec3add5cecbffcbd/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/f8ebea5b19f6495bec3add5cecbffcbd/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/32677fccac088d0a3bad9afd0c6ccc80/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/32677fccac088d0a3bad9afd0c6ccc80/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/0bbb11332b3645ac3c97108e0e24b7d6/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/0bbb11332b3645ac3c97108e0e24b7d6/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-compat:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/f16c5c92b3730a3aa6910a7b86b9af60/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/f16c5c92b3730a3aa6910a7b86b9af60/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/60bcca9001cae535c34ac7f1756b1828/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/60bcca9001cae535c34ac7f1756b1828/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/2fa947160dead79f55fd1135f6f0feb2/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/2fa947160dead79f55fd1135f6f0feb2/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /home/ptv/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/c4f448ce7584dcef430f0bd7e0586c00/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /home/ptv/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/c4f448ce7584dcef430f0bd7e0586c00/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/ab48f351e2d9f368511fb7c7f337ea1f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/ab48f351e2d9f368511fb7c7f337ea1f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/46216a00d50fb28c6aa0e0616d74744f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/46216a00d50fb28c6aa0e0616d74744f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/f1c5e141a5b0e2af96659602ce9502b0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/f1c5e141a5b0e2af96659602ce9502b0/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /home/ptv/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/f2aefb777b3312ece9dd65d85e74aa73/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /home/ptv/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/f2aefb777b3312ece9dd65d85e74aa73/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /home/ptv/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/8e598ead5189faccb0b26ebde5660703/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /home/ptv/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/8e598ead5189faccb0b26ebde5660703/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /home/ptv/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/fa8c85fd205a6a008ff1ed051c69c760/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /home/ptv/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/fa8c85fd205a6a008ff1ed051c69c760/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /home/ptv/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/979a20adf5fc527fdbd3a2f2ab310a1d/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /home/ptv/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/979a20adf5fc527fdbd3a2f2ab310a1d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/9680430f9a6a8c6fcfb49ef67b8c416d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/9680430f9a6a8c6fcfb49ef67b8c416d/AndroidManifest.xml:20:5-44
+MERGED from [com.facebook.fresco:fresco:1.10.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/fresco-1.10.0.aar/4ee18051ab29ccedfa61483e522e00d5/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fresco:1.10.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/fresco-1.10.0.aar/4ee18051ab29ccedfa61483e522e00d5/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.10.0.aar/2230f969a929be23fac1872a92116a90/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.10.0.aar/2230f969a929be23fac1872a92116a90/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:1.10.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/drawee-1.10.0.aar/ddf5ab0f19c5e46387cdef0aae994b69/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:1.10.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/drawee-1.10.0.aar/ddf5ab0f19c5e46387cdef0aae994b69/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:1.10.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/imagepipeline-1.10.0.aar/10b81a6a394b7c9c17ca4eadf583c517/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:1.10.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/imagepipeline-1.10.0.aar/10b81a6a394b7c9c17ca4eadf583c517/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/imagepipeline-base-1.10.0.aar/54b2488fa3dedbf7dde960d933fa5d93/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/imagepipeline-base-1.10.0.aar/54b2488fa3dedbf7dde960d933fa5d93/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.soloader:soloader:0.6.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/soloader-0.6.0.aar/2df10f8a5f5cb03a64566c1e1ab253f0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.soloader:soloader:0.6.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/soloader-0.6.0.aar/2df10f8a5f5cb03a64566c1e1ab253f0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.fresco:fbcore:1.10.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/fbcore-1.10.0.aar/306880ad828f6ad923c6f28cf50a3ec9/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:1.10.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/fbcore-1.10.0.aar/306880ad828f6ad923c6f28cf50a3ec9/AndroidManifest.xml:5:5-7:41
+INJECTED from /home/ptv/Documents/ATRBike/android/app/src/debug/AndroidManifest.xml
+INJECTED from /home/ptv/Documents/ATRBike/android/app/src/debug/AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from [com.android.support:support-v4:26.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/cf39448dc58607281ff51aee70e8e463/AndroidManifest.xml:23:9-51
 	android:targetSdkVersion
-		INJECTED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\PTV\Documents\ATRBike\android\app\src\debug\AndroidManifest.xml
+		INJECTED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/ptv/Documents/ATRBike/android/app/src/debug/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\PTV\Documents\ATRBike\android\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\PTV\Documents\ATRBike\android\app\src\debug\AndroidManifest.xml
+		INJECTED from /home/ptv/Documents/ATRBike/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/ptv/Documents/ATRBike/android/app/src/debug/AndroidManifest.xml
 uses-permission#android.permission.SYSTEM_ALERT_WINDOW
-ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\debug\AndroidManifest.xml:5:5-77
+ADDED from /home/ptv/Documents/ATRBike/android/app/src/debug/AndroidManifest.xml:5:5-77
 	android:name
-		ADDED from C:\Users\PTV\Documents\ATRBike\android\app\src\debug\AndroidManifest.xml:5:22-75
+		ADDED from /home/ptv/Documents/ATRBike/android/app/src/debug/AndroidManifest.xml:5:22-75
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from [:react-native-maps] /home/ptv/Documents/ATRBike/node_modules/react-native-maps/lib/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:10:5-81
+	android:name
+		ADDED from [:react-native-maps] /home/ptv/Documents/ATRBike/node_modules/react-native-maps/lib/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:10:22-78
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [:@react-native-community_netinfo] C:\Users\PTV\Documents\ATRBike\node_modules\@react-native-community\netinfo\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:9:5-79
+ADDED from [:@react-native-community_netinfo] /home/ptv/Documents/ATRBike/node_modules/@react-native-community/netinfo/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-79
+MERGED from [com.google.android.gms:play-services-maps:16.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/play-services-maps-16.1.0.aar/3ffd7f945c231bc95d23d68b0ee11b18/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-maps:16.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/play-services-maps-16.1.0.aar/3ffd7f945c231bc95d23d68b0ee11b18/AndroidManifest.xml:23:5-79
 	android:name
-		ADDED from [:@react-native-community_netinfo] C:\Users\PTV\Documents\ATRBike\node_modules\@react-native-community\netinfo\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:9:22-76
+		ADDED from [:@react-native-community_netinfo] /home/ptv/Documents/ATRBike/node_modules/@react-native-community/netinfo/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:9:22-76
+uses-feature#0x00020000
+ADDED from [com.google.android.gms:play-services-maps:16.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/play-services-maps-16.1.0.aar/3ffd7f945c231bc95d23d68b0ee11b18/AndroidManifest.xml:26:5-28:35
+	android:glEsVersion
+		ADDED from [com.google.android.gms:play-services-maps:16.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/play-services-maps-16.1.0.aar/3ffd7f945c231bc95d23d68b0ee11b18/AndroidManifest.xml:27:9-41
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:16.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/play-services-maps-16.1.0.aar/3ffd7f945c231bc95d23d68b0ee11b18/AndroidManifest.xml:28:9-32
+uses-library#org.apache.http.legacy
+ADDED from [com.google.android.gms:play-services-maps:16.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/play-services-maps-16.1.0.aar/3ffd7f945c231bc95d23d68b0ee11b18/AndroidManifest.xml:33:9-35:40
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:16.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/play-services-maps-16.1.0.aar/3ffd7f945c231bc95d23d68b0ee11b18/AndroidManifest.xml:35:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-maps:16.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/play-services-maps-16.1.0.aar/3ffd7f945c231bc95d23d68b0ee11b18/AndroidManifest.xml:34:13-50
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:16.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/play-services-base-16.1.0.aar/a6b71dbd28066854c85024b4b9c6485d/AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:16.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/play-services-base-16.1.0.aar/a6b71dbd28066854c85024b4b9c6485d/AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:16.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/play-services-base-16.1.0.aar/a6b71dbd28066854c85024b4b9c6485d/AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:16.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/play-services-base-16.1.0.aar/a6b71dbd28066854c85024b4b9c6485d/AndroidManifest.xml:24:13-79
+meta-data#com.google.android.gms.version
+ADDED from [com.google.maps.android:android-maps-utils:0.5] /home/ptv/.gradle/caches/transforms-1/files-1.1/android-maps-utils-0.5.aar/e2187c657f687e24f65dcdd6f1a09d4f/AndroidManifest.xml:8:9-10:69
+MERGED from [com.google.android.gms:play-services-basement:16.2.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.2.0.aar/1e28c738e7bbaa8c7e31a2ecf57510dc/AndroidManifest.xml:23:9-25:69
+MERGED from [com.google.android.gms:play-services-basement:16.2.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.2.0.aar/1e28c738e7bbaa8c7e31a2ecf57510dc/AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from [com.google.maps.android:android-maps-utils:0.5] /home/ptv/.gradle/caches/transforms-1/files-1.1/android-maps-utils-0.5.aar/e2187c657f687e24f65dcdd6f1a09d4f/AndroidManifest.xml:10:13-66
+	android:name
+		ADDED from [com.google.maps.android:android-maps-utils:0.5] /home/ptv/.gradle/caches/transforms-1/files-1.1/android-maps-utils-0.5.aar/e2187c657f687e24f65dcdd6f1a09d4f/AndroidManifest.xml:9:13-58
+meta-data#android.support.VERSION
+ADDED from [com.android.support:support-v4:26.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/cf39448dc58607281ff51aee70e8e463/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/0bbb11332b3645ac3c97108e0e24b7d6/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/0bbb11332b3645ac3c97108e0e24b7d6/AndroidManifest.xml:26:9-28:38
+	android:value
+		ADDED from [com.android.support:support-v4:26.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/cf39448dc58607281ff51aee70e8e463/AndroidManifest.xml:28:13-35
+	android:name
+		ADDED from [com.android.support:support-v4:26.1.0] /home/ptv/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/cf39448dc58607281ff51aee70e8e463/AndroidManifest.xml:27:13-51

@@ -10,8 +10,12 @@ export default StyleSheet.create({
         flex: 1,
         justifyContent: 'space-between',
         backgroundColor: 'white'
-    },
+    }, 
     logoutView: {
         
+    },
+    userContainer: {
+        height: 200,
+        backgroundColor: 'lightblue'
     }
 })

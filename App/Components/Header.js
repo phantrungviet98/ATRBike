@@ -8,7 +8,7 @@ class Header extends Component {
             <View style={styles.headerStyle}>
                 {typeof (this.props.goBack) !== 'undefined' ?
                     <TouchableOpacity onPress={() => { this.props.goBack() }}>
-                        <Image style={styles.imageHeaderStyle} source={require('../Images/Icons/go-back-icon.png')} />
+                        <Image style={styles.imageHeaderStyle} source={require('../Images/Icons/back-button.png')} />
                     </TouchableOpacity> :
                     <View style={{marginLeft: 10,}}></View>}
 
@@ -30,10 +30,9 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
     },
     imageHeaderStyle: {
-        width: 20,
-        height: 20,
-        marginLeft: 10,
-        marginRight: 10,
+        width: 60,
+        height: 60,
+        
     },
     titleHeaderStyle: {
         fontSize: 20,

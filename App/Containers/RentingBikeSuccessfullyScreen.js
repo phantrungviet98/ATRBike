@@ -5,14 +5,13 @@ import Header from '../Components/Header'
 import RentingBikeRedux from '../Redux/RentingBikeRedux'
 import LocksRentingRedux from '../Redux/LocksRentingRedux'
 import Loading from 'react-native-loading-spinner-overlay'
-import { lockSubcription } from '../Config/Global'
 import moment from 'moment'
-import NetInfo from '@react-native-community/netinfo'
 import LockRentingFlatListItem from '../Components/LockRentingFlatListItem'
 import Drawer from 'react-native-drawer-menu'
 import drawerContent from '../Components/Drawer'
 import ReturnBikeRedux from '../Redux/ReturnBikeRedux'
 import {resetScreen} from '../untils/navigation'
+import GettingStationRedux from '../Redux/GettingStationRedux'
 
 class RentingBikeSuccessfullyScreen extends Component {
 
@@ -63,12 +62,10 @@ class RentingBikeSuccessfullyScreen extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log('nextProps Rsdfdfsdf', nextProps)
-    console.log('this.checkReturn', this.checkReturnPressed)
-    console.log('lockSr', this.props.locksRentingList)
     
     if(nextProps.locksRentingList.length == 0 && nextProps.locksRentingStatus === 'finished'){
       console.log('sdsfdsf')
+      this.props.gettingStation(this.props.token)
       nextProps.navigation.dispatch(resetScreen('StationScreen'))
     }
 
@@ -132,7 +129,7 @@ class RentingBikeSuccessfullyScreen extends Component {
       easingFunc={Easing.ease}>
         <View style={{ flex: 1 }}>
         <Header title='Renting Bike Successfully List' goBack={() => this.props.navigation.goBack()} />
-        <Loading visible={this.props.isLocksRentingRequesting} textContent={'Loadingsadfds...'} />
+        <Loading visible={(this.props.locksRentingStatus === 'activated' || this.props.returnBikeStatus === 'activated') ? true : false} textContent={'Loading...'} />
         <View style={styles.TimeContainer}>
           <Text style={styles.TimeText}> {(this.state.duration.hour !== -1 && this.state.duration.hours !== -1) ? rentingDuration : 'Wellcome!!. Choose any lock to see information'} </Text>
           <Text style={styles.TimeText}> {(this.state.duration.hour !== -1 && this.state.duration.hours !== -1) ? rentingPayment : ''}</Text>
@@ -190,7 +187,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     locksRentingRequest: (token) => dispatch(LocksRentingRedux.locksRentingRequest(token)),
-    returnBike: (token, contentReturnBikeRequest) => dispatch(ReturnBikeRedux.returnBikeRequest(token, contentReturnBikeRequest))
+    returnBike: (token, contentReturnBikeRequest) => dispatch(ReturnBikeRedux.returnBikeRequest(token, contentReturnBikeRequest)),
+    gettingStation: (token) => dispatch(GettingStationRedux.gettingStationRequest(token)),
   }
 }
 

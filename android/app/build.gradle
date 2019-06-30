@@ -138,6 +138,8 @@ android {
 }
 
 dependencies {
+    implementation project(':lottie-react-native')
+    implementation project(':react-native-maps')
     implementation project(':@react-native-community_netinfo')
     implementation project(':react-native-i18n')
     implementation project(':react-native-gesture-handler')

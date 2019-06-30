@@ -6,6 +6,8 @@ import { rentingBikeEpic } from "./RentingBikeEpic";
 import { locksRentingEpic } from './LocksRentingEpic'
 import { pingEpic } from './PingEpic'
 import { returnBikeEpic } from './ReturnBikeEpic'
+import { payboxRegisterEpic } from './PayboxRegisterEpic'
+import { payboxCaptureEpic } from './PayboxCaptureEpic'
 export const rootEpic = combineEpics(
   signInEpic,
   signUpEpic,
@@ -13,5 +15,7 @@ export const rootEpic = combineEpics(
   rentingBikeEpic,
   locksRentingEpic,
   pingEpic,
-  returnBikeEpic
+  returnBikeEpic,
+  payboxRegisterEpic,
+  payboxCaptureEpic
 );

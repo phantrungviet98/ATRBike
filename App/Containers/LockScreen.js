@@ -8,27 +8,25 @@ import GettingStationRedux from '../Redux/GettingStationRedux'
 import SocketIOClient from 'socket.io-client'
 import {lockSubcription} from '../Config/Global'
 import {resetScreen} from '../untils/navigation'
+import LockScreenStyles from './Styles/LockScreenStyles';
 
 class LockScreen extends Component {
 
   constructor(props) {
     super(props)
-    this.state = {
-      listLock: [],
-    }
-    lockSubcription.subscribe({
-      next: (lockID) => this.setState({listLock: this.removeLock(lockID)}) 
-    })
+    // lockSubcription.subscribe({
+    //   next: (lockID) => this.setState({listLock: this.removeLock(lockID)}) 
+    // })
     
   }
 
-  removeLock = (lockID) => {
-    return this.state.listLock.filter(lock => {
-      if(lock._id !== lockID) {
-        return true
-      }
-    }) 
-  }
+  // removeLock = (lockID) => {
+  //   return this.state.listLock.filter(lock => {
+  //     if(lock._id !== lockID) {
+  //       return true
+  //     }
+  //   }) 
+  // }
 
   static navigationOptions = {
     header: null
@@ -38,44 +36,47 @@ class LockScreen extends Component {
 
   }
 
-  componentDidMount = () => {
-    this.setState({
-      listLock: this.props.navigation.getParam('stationLocks', [])
-    })
-  };
-
   componentWillReceiveProps = (nextProps) => {
-    const chosenStation = nextProps.listStation.filter((station) => {
-      if(station.id === this.props.navigation.getParam('stationId', '-1')) {
-        return true
-      }
-    })
-    this.setState({listLock: chosenStation.locks})
+    // const chosenStation = nextProps.listStation.filter((station) => {
+    //   if(station.id === this.props.navigation.getParam('stationId', '-1')) {
+    //     return true
+    //   }
+    // })
+    // this.setState({listLock: chosenStation.locks})
   }
 
-  onPressLock = (lock) => {
-    this.props.navigation.navigate('RentingBikeScreen', { chosenLock: lock})
+  rentingBike = () => {
+   this.props.rentingBike(this.props.lock._id)
   }
-
+ 
   render() {
-    const stationId = this.props.navigation.getParam('stationId', '-1')
+    //const stationId = this.props.navigation.getParam('stationId', '-1')
+    const {lock} = this.props
     return (
-      <View style={{ flex: 1 }}>
-        <Header title='Lock' goBack={() => this.props.navigation.goBack()} />
-
-        <View>
-          <Text> {stationId} </Text>
+      <View>
+        <View style={LockScreenStyles.header}>
+          <Text style={LockScreenStyles.headerText}> {this.props.stationName} </Text>
         </View>
-
-        <View>
-          {this.state.listLock.length !== 0 ?
-            <FlatList data={this.state.listLock}
-              renderItem={({ item }) => <ItemLockFlatList item={item} goToRentingScreen={this.onPressLock} />}
+        {/* <View>
+          {this.props.chosenStation.locks.length !== 0 ?
+            <FlatList data={this.props.chosenStation.locks}
+              renderItem={({ item }) => <ItemLockFlatList item={item} onPressLock={this.props.onPressLock} />}
               keyExtractor={(item, index) => index.toString()}
             /> :
             <Text>No any lock</Text>
           }
-        </View>
+        </View> */}
+
+          <View style={LockScreenStyles.item}>
+            <View>
+              <Text>Name: {lock.name}</Text>
+              <Text>Serial: {lock.serial}</Text>
+            </View>
+            <TouchableOpacity style={LockScreenStyles.unlockButton} onPress={this.rentingBike}>
+              <Text>Unlock</Text>
+            </TouchableOpacity>
+          </View>
+       
       </View>
     )
   }
